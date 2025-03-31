@@ -150,6 +150,7 @@ public class LevelBuilder : EditorWindow
     private bool CheckTilePropability()
     {
         Tile tile = null;
+        Debug.Log("Check Propability");
 
         for (int x = 0; x < selectedNode.transform.childCount; x++)
         {
