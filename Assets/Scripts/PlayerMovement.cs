@@ -49,19 +49,19 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("WALL");
             if(movingUp)
             {
-                transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 0.4f);
+                transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 0.43f);
             }
             else if(movingDown)
             {
-                transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.4f);
+                transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.43f);
             }
             else if(movingLeft)
             {
-                transform.position = new Vector3(transform.position.x - 0.4f, transform.position.y, transform.position.z);
+                transform.position = new Vector3(transform.position.x - 0.43f, transform.position.y, transform.position.z);
             }
             else if(movingRight)
             {
-                transform.position = new Vector3(transform.position.x + 0.4f, transform.position.y, transform.position.z);
+                transform.position = new Vector3(transform.position.x + 0.43f, transform.position.y, transform.position.z);
             }
             movingUp = false;
             movingDown = false;
@@ -106,19 +106,19 @@ public class PlayerMovement : MonoBehaviour
 
     void ChoosingDirection()
     {
-        if(Input.GetKeyDown(KeyCode.W) && !movingUp && !movingDown && !movingLeft && !movingRight)
+        if(Input.GetKeyDown(KeyCode.W) && !movingUp && !movingDown && !movingLeft && !movingRight && !Input.GetKeyDown(KeyCode.A) && !Input.GetKeyDown(KeyCode.S) && !Input.GetKeyDown(KeyCode.D))
         {
             movingUp = true;
         }
-        else if(Input.GetKeyDown(KeyCode.A) && !movingUp && !movingDown && !movingLeft && !movingRight)
+        else if(Input.GetKeyDown(KeyCode.A) && !movingUp && !movingDown && !movingLeft && !movingRight && !Input.GetKeyDown(KeyCode.W) && !Input.GetKeyDown(KeyCode.S) && !Input.GetKeyDown(KeyCode.D))
         {
             movingLeft = true;
         }
-        else if(Input.GetKeyDown(KeyCode.D) && !movingUp && !movingDown && !movingLeft && !movingRight)
+        else if(Input.GetKeyDown(KeyCode.D) && !movingUp && !movingDown && !movingLeft && !movingRight && !Input.GetKeyDown(KeyCode.A) && !Input.GetKeyDown(KeyCode.S) && !Input.GetKeyDown(KeyCode.W))
         {
             movingRight = true;
         }
-        else if(Input.GetKeyDown(KeyCode.S) && !movingUp && !movingDown && !movingLeft && !movingRight)
+        else if(Input.GetKeyDown(KeyCode.S) && !movingUp && !movingDown && !movingLeft && !movingRight && !Input.GetKeyDown(KeyCode.A) && !Input.GetKeyDown(KeyCode.W) && !Input.GetKeyDown(KeyCode.D))
         {
             movingDown = true;
         }
