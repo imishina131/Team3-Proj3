@@ -63,22 +63,34 @@ public class SceneChange : MonoBehaviour
 
     public void GoToLevel03()
     {
-        SceneManager.LoadScene("Level03");
+        if(level02Complete)
+        {
+            SceneManager.LoadScene("Level03");
+        }
     }
 
     public void GoToLevel04()
     {
-        SceneManager.LoadScene("Level04");
+        if(level03Complete)
+        {
+            SceneManager.LoadScene("Level04");
+        }
     }
 
     public void GoToLevel05()
     {
-        SceneManager.LoadScene("Level05");
+        if(level04Complete)
+        {
+            SceneManager.LoadScene("Level05");
+        }
     }
 
     public void GoToLevel06()
     {
-        SceneManager.LoadScene("Level06");
+        if(level05Complete)
+        {
+            SceneManager.LoadScene("Level06");
+        }
     }
 
     public void GoToTutorial()
