@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEditor;
 
 public class BuildArea : MonoBehaviour
 {
@@ -22,7 +23,9 @@ public class BuildArea : MonoBehaviour
                 node.name = $"Build Node (X: {x}, Z: {z})";
                 Node nodescript = node.AddComponent<Node>();
                 nodescript.buildArea = this;
-                UnityEditor.EditorUtility.SetDirty(node);
+                #if UNITY_EDITOR
+                    UnityEditor.EditorUtility.SetDirty(node);
+                #endif
             }
         }
     }
