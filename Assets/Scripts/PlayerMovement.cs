@@ -1,25 +1,32 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
     private float playerSpeed = 2.0f;
-    private CharacterController controller;
     private Vector3 playerVelocity;
     private bool movingUp;
     private bool movingDown;
     private bool movingRight;
     private bool movingLeft;
+    private GameObject[] bones;
+
+
+    public TMP_Text boneCounter;
+    private int numberOfBones;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        controller = gameObject.GetComponent<CharacterController>();
+        bones = GameObject.FindGameObjectsWithTag("Bone");
     }
 
     // Update is called once per frame
     void Update()
     {
         ChoosingDirection();
+
+        boneCounter.text = "Bones Collected: " + numberOfBones + "/" + bones.Length;
 
     }
 
@@ -48,6 +55,12 @@ public class PlayerMovement : MonoBehaviour
             movingDown = false;
             movingLeft = false;
             movingRight = false;
+        }
+
+        if(other.gameObject.tag == "Bone")
+        {
+            numberOfBones += 1;
+            Destroy(other.gameObject);
         }
 
     }
