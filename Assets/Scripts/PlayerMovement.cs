@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
 
     public Slider healthBar;
     private int health = 100;
+
+    public Animator blockToMove;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -89,6 +91,16 @@ public class PlayerMovement : MonoBehaviour
                 SceneChange.level01Complete = true;
                 SceneManager.LoadScene("Level02");
             }
+            else if(SceneManager.GetActiveScene().name == "Level02")
+            {
+                SceneChange.level02Complete = true;
+                SceneManager.LoadScene("Level03");
+            }
+        }
+
+        if(other.gameObject.tag == "Move")
+        {
+            blockToMove.SetTrigger("Show");
         }
     }
 
