@@ -49,19 +49,19 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("WALL");
             if(movingUp)
             {
-                transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 0.43f);
+                transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 0.45f);
             }
             else if(movingDown)
             {
-                transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.43f);
+                transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.45f);
             }
             else if(movingLeft)
             {
-                transform.position = new Vector3(transform.position.x - 0.43f, transform.position.y, transform.position.z);
+                transform.position = new Vector3(transform.position.x - 0.45f, transform.position.y, transform.position.z);
             }
             else if(movingRight)
             {
-                transform.position = new Vector3(transform.position.x + 0.43f, transform.position.y, transform.position.z);
+                transform.position = new Vector3(transform.position.x + 0.45f, transform.position.y, transform.position.z);
             }
             movingUp = false;
             movingDown = false;
