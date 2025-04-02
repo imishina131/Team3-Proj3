@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -15,10 +16,14 @@ public class PlayerMovement : MonoBehaviour
 
     public TMP_Text boneCounter;
     private int numberOfBones;
+
+    public Slider healthBar;
+    private int health = 100;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         bones = GameObject.FindGameObjectsWithTag("Bone");
+        healthBar.maxValue = health;
     }
 
     // Update is called once per frame
@@ -26,7 +31,12 @@ public class PlayerMovement : MonoBehaviour
     {
         ChoosingDirection();
 
-        boneCounter.text = "Bones Collected: " + numberOfBones + "/" + bones.Length;
+        healthBar.value = health;
+
+        if(SceneManager.GetActiveScene().name != "Tutorial")
+        {
+            boneCounter.text = "Bones Collected: " + numberOfBones + "/" + bones.Length;
+        }
 
     }
 
@@ -71,10 +81,12 @@ public class PlayerMovement : MonoBehaviour
         {
             if(SceneManager.GetActiveScene().name == "Tutorial")
             {
+                SceneChange.tutorialComplete = true;
                 SceneManager.LoadScene("Level01");
             }     
             else if(SceneManager.GetActiveScene().name == "Level01")
             {
+                SceneChange.level01Complete = true;
                 SceneManager.LoadScene("Level02");
             }
         }

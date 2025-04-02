@@ -16,7 +16,7 @@ public class SceneChange : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        Time.timeScale = 1f;
     }
 
     // Update is called once per frame
@@ -47,12 +47,18 @@ public class SceneChange : MonoBehaviour
 
     public void GoToLevel01()
     {
-        SceneManager.LoadScene("Level01");
+        if(tutorialComplete)
+        {
+            SceneManager.LoadScene("Level01");
+        }
     }
 
     public void GoToLevel02()
     {
-        SceneManager.LoadScene("Level02");
+        if(level01Complete)
+        {
+            SceneManager.LoadScene("Level02");
+        }
     }
 
     public void GoToLevel03()
