@@ -1754,7 +1754,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c9bc6653c13c7f549bd8f7c90a34b30a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6364,7 +6364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tileSize: 2
-  size: {x: 7, y: 6}
+  size: {x: 7, y: 6, z: 0}
   showBuildAreaGizmo: 1
   showTileTopGizmo: 1
   showPropsBottomGizmos: 1
