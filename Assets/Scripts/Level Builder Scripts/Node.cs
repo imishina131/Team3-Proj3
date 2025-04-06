@@ -1,10 +1,11 @@
 using UnityEngine;
+//using UnityEditor;
 
 //namespace Team3Proj3.LevelBuilder
 //{
-   // [SelectionBase]
+// [SelectionBase]
 
-    public class Node : MonoBehaviour
+public class Node : MonoBehaviour
     {
         [HideInInspector] public BuildArea buildArea;
 
