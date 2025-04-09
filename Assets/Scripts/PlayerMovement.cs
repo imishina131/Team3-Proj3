@@ -136,6 +136,31 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+        if(other.gameObject.tag == "Salt")
+        {
+            health = health - 75;
+            if(movingUp)
+            {
+                movingUp = false;
+                movingDown = true;
+            }
+            else if(movingDown)
+            {
+                movingDown = false;
+                movingUp = true;
+            }
+            else if(movingLeft)
+            {
+                movingLeft = false;
+                movingRight = true;
+            }
+            else if(movingRight)
+            {
+                movingRight = false;
+                movingLeft = true;
+            }
+        }
+
     }
 
     void ChoosingDirection()
