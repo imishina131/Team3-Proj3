@@ -45,6 +45,11 @@ public class PlayerMovement : MonoBehaviour
 
         healthBar.value = health;
 
+        if(health <= 0)
+        {
+            SceneManager.LoadScene("LevelChoiceMenu");
+        }
+
         if(SceneManager.GetActiveScene().name != "Tutorial")
         {
             boneCounter.text = "Bones Collected: " + numberOfBones + "/" + bones.Length;
@@ -61,6 +66,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         Debug.Log("UP:" + movingUp + "DOWN:" + movingDown + "RIGHT:" + movingRight + "LEFT:" + movingLeft);
+        Debug.Log("Bone:" + GameObject.FindGameObjectWithTag("Bone"));
 
     }
 
@@ -101,15 +107,19 @@ public class PlayerMovement : MonoBehaviour
                 SceneChange.level02Complete = true;
                 SceneManager.LoadScene("Level03");
             }
+            else if(SceneManager.GetActiveScene().name == "Level03" && GameObject.FindGameObjectWithTag("Bone") == null)
+            {
+                SceneChange.level03Complete = true;
+                SceneManager.LoadScene("Level04");
+            }
+            else if(SceneManager.GetActiveScene().name == "Level04" && GameObject.FindGameObjectWithTag("Bone") == null)
+            {
+                SceneChange.level04Complete = true;
+                SceneManager.LoadScene("Level05");
+            }
         }
 
-        if(other.gameObject.tag == "Move")
-        {
-            Transform child = other.transform.Find("RaisingStoneWall");
-            GameObject childObject = child.gameObject;
-            blockToMove = childObject.GetComponent<Animator>();
-            blockToMove.SetTrigger("Show");
-        }
+
 
         if(other.gameObject.tag == "Spike")
         {
@@ -161,6 +171,17 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.tag == "Move")
+        {
+            Transform child = other.transform.Find("RaisingStoneWall");
+            GameObject childObject = child.gameObject;
+            blockToMove = childObject.GetComponent<Animator>();
+            blockToMove.SetTrigger("Show");
+        }
     }
 
     void ChoosingDirection()
