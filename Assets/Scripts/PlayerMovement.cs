@@ -212,28 +212,28 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0,180,0);
             animator.SetBool("Walking", true);
-            rb.velocity = Vector3.back * playerSpeed;
+            rb.linearVelocity = Vector3.back * playerSpeed;
             //transform.Translate(Vector3.back * playerSpeed * Time.deltaTime);
         }
         else if(movingDown)
         {
             transform.rotation = Quaternion.Euler(0,0,0);
             animator.SetBool("Walking", true);
-            rb.velocity = Vector3.forward * playerSpeed;
+            rb.linearVelocity = Vector3.forward * playerSpeed;
             //transform.Translate(Vector3.forward * playerSpeed * Time.deltaTime);
         }
         else if(movingLeft)
         {
             transform.rotation = Quaternion.Euler(0,90,0);
             animator.SetBool("Walking", true);
-            rb.velocity = Vector3.right * playerSpeed;
+            rb.linearVelocity = Vector3.right * playerSpeed;
             //transform.Translate(Vector3.right * playerSpeed * Time.deltaTime);
         }
         else if(movingRight)
         {
             transform.rotation = Quaternion.Euler(0,-90,0);
             animator.SetBool("Walking", true);
-            rb.velocity = Vector3.left * playerSpeed;
+            rb.linearVelocity = Vector3.left * playerSpeed;
             //transform.Translate(Vector3.left * playerSpeed * Time.deltaTime);
         }
     }
