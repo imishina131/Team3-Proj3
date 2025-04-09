@@ -27,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
     public GameObject raycastObject;
 
     Rigidbody rb;
+
+    public GameObject fence;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -53,6 +55,11 @@ public class PlayerMovement : MonoBehaviour
             CheckForHit();
         }
 
+        if(GameObject.FindGameObjectWithTag("Bone") == null)
+        {
+            fence.SetActive(false);
+        }
+
         Debug.Log("UP:" + movingUp + "DOWN:" + movingDown + "RIGHT:" + movingRight + "LEFT:" + movingLeft);
 
     }
@@ -64,6 +71,12 @@ public class PlayerMovement : MonoBehaviour
         if(other.gameObject.tag == "Bone")
         {
             numberOfBones += 1;
+            Destroy(other.gameObject);
+        }
+
+        if(other.gameObject.tag == "Bomb")
+        {
+            health = health - 50;
             Destroy(other.gameObject);
         }
 
@@ -92,6 +105,9 @@ public class PlayerMovement : MonoBehaviour
 
         if(other.gameObject.tag == "Move")
         {
+            Transform child = other.transform.Find("RaisingStoneWall");
+            GameObject childObject = child.gameObject;
+            blockToMove = childObject.GetComponent<Animator>();
             blockToMove.SetTrigger("Show");
         }
 
@@ -119,6 +135,7 @@ public class PlayerMovement : MonoBehaviour
                 movingLeft = true;
             }
         }
+
     }
 
     void ChoosingDirection()
