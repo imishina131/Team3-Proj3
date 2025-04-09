@@ -12,6 +12,8 @@ public class SceneChange : MonoBehaviour
     public static bool level05Complete;
     public static bool level06Complete;
 
+    public GameObject pauseMenu;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

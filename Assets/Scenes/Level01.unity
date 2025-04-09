@@ -156,6 +156,7 @@ MonoBehaviour:
   animator: {fileID: 2065655867}
   raycastObject: {fileID: 1978830260}
   fence: {fileID: 1922454066}
+  boneMessage: {fileID: 1484459591}
 --- !u!54 &21992077
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1816,6 +1817,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   raycastObject: {fileID: 0}
   fence: {fileID: 0}
+  boneMessage: {fileID: 0}
 --- !u!136 &545593435
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6019,6 +6021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b87b7f408430c44ae4c420b78dfe59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 2025482944}
 --- !u!114 &1506586499
 MonoBehaviour:
   m_ObjectHideFlags: 0

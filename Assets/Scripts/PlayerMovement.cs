@@ -29,6 +29,8 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody rb;
 
     public GameObject fence;
+
+    public GameObject boneMessage;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -78,6 +80,11 @@ public class PlayerMovement : MonoBehaviour
         {
             numberOfBones += 1;
             Destroy(other.gameObject);
+            if(SceneManager.GetActiveScene().name == "Level01" || SceneManager.GetActiveScene().name == "Level02" || SceneManager.GetActiveScene().name == "Level03")
+            {
+                boneMessage.SetActive(true);
+                Invoke("HideMessage", 5.0f);
+            }
         }
 
         if(other.gameObject.tag == "Bomb")
@@ -86,6 +93,11 @@ public class PlayerMovement : MonoBehaviour
             Destroy(other.gameObject);
         }
 
+    }
+
+    void HideMessage()
+    {
+        boneMessage.SetActive(false);
     }
 
     void OnTriggerEnter(Collider other)
