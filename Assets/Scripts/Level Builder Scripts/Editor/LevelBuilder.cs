@@ -20,17 +20,24 @@ public class LevelBuilder : EditorWindow
     int selectedTileIndex = 0;
     int selectedPropIndex = 0;
 
+    //scrolling
+   // Vector2 scrollPos = Vector2.zero;
+    //Vector2 scrollPos2 = Vector2.zero;
+
     Node selectedNode;
 
     GUIContent originConfiglabel = new GUIContent("Origin Point Configuration");
 
     GUIContent sizeConfigLabel = new GUIContent("Size Configuration");
 
-    [MenuItem ("Level Builder/Open Builder")]
+    [MenuItem("Level Builder/Open Builder")]
 
     static void ShowWindow()
     {
-        LevelBuilder window = (LevelBuilder)GetWindow(typeof(LevelBuilder));   
+        LevelBuilder window = (LevelBuilder)GetWindow(typeof(LevelBuilder));
+        //scrolling
+        //window.minSize = new Vector2(250, 250);
+        //window.maxSize = new Vector2(500, 500);
         window.Show();
     }
 
@@ -40,11 +47,23 @@ public class LevelBuilder : EditorWindow
     }
     private void OnGUI()
     {
+        
         currentToolbarTabindex = GUILayout.Toolbar(currentToolbarTabindex, toolbarTabs);
+       // scrollPos = EditorGUILayout.BeginScrollView(scrollPos, GUILayout.Height(100));
+        
+        //selectedTileIndex = EditorGUILayout.IntField(selectedTileIndex, GUILayout.ExpandHeight(true));
+        //EditorGUILayout.EndScrollView();
+
+       // GUILayout.FlexibleSpace();
 
         if (currentToolbarTabindex == 0) DrawSetupTab();
         else if (currentToolbarTabindex == 1) DrawASelectionTab("Tiles");
         else if (currentToolbarTabindex == 2) DrawASelectionTab("Props");
+
+
+        //scrolling
+       // scrollPos = EditorGUILayout.BeginScrollView(scrollPos, GUILayout.Height(100));
+        //EditorGUILayout.EndScrollView();
     }
 
     private void DrawSetupTab()
@@ -103,7 +122,9 @@ public class LevelBuilder : EditorWindow
         }
 
         GUIContent[] contentsArray = contents.ToArray();
-
+        //contentsArray = EditorGUILayout.(contents, GUILayout.ExpandHeight(true));
+        //GUIContent[] 
+        //selectedTileIndex = EditorGUILayout.IntField(selectedTileIndex, GUILayout.ExpandHeight(true));
         if (tab == "Tiles") selectedTileIndex = GUILayout.SelectionGrid(selectedTileIndex, contentsArray, 3);
         else selectedPropIndex = GUILayout.SelectionGrid(selectedPropIndex, contentsArray, 3);
     }

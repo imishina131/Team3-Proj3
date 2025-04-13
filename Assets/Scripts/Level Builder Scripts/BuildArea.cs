@@ -43,7 +43,7 @@ public class BuildArea : MonoBehaviour
             {
                 for (int y = 0; y < size.y; y++)
                 {
-                    Vector3 pos = new Vector3(transform.position.x + (x * tileSize), transform.position.y, transform.position.z + (z * tileSize));
+                    Vector3 pos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
                     Gizmos.DrawWireCube(pos, new Vector3(tileSize, 0, tileSize));
                 }
             }
