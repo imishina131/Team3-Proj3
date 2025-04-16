@@ -6,7 +6,7 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private float playerSpeed = 3.0f;
+    private float playerSpeed = 2.0f;
     private Vector3 playerVelocity;
     private bool movingUp;
     private bool movingDown;
@@ -48,6 +48,18 @@ public class PlayerMovement : MonoBehaviour
     private bool startTimer;
 
     private bool canWalk = true;
+
+    private AudioSource audio;
+    public AudioClip collectSound;
+    public AudioClip bombSound;
+    public AudioClip movingBlockSound;
+    public AudioClip saltSound;
+    public AudioClip spikeSound;
+    public AudioClip starSound;
+
+    public AudioSource walkAudio;
+    private bool walkPlaying;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -58,6 +70,8 @@ public class PlayerMovement : MonoBehaviour
 
         startTimer = false;
         timerSlider.maxValue = maxTime;
+
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -115,6 +129,8 @@ public class PlayerMovement : MonoBehaviour
         {
             numberOfBones += 1;
             Destroy(other.gameObject);
+            audio.clip = collectSound;
+            audio.Play();
             if(SceneManager.GetActiveScene().name == "Level01" || SceneManager.GetActiveScene().name == "Level02" || SceneManager.GetActiveScene().name == "Level03")
             {
                 boneMessage.SetActive(true);
@@ -124,12 +140,16 @@ public class PlayerMovement : MonoBehaviour
 
         if(other.gameObject.tag == "Slime")
         {
+            audio.clip = collectSound;
+            audio.Play();
             numberOfSlimes += 1;
             Destroy(other.gameObject);
         }
 
         if(other.gameObject.tag == "Bomb")
         {
+            audio.clip = bombSound;
+            audio.Play();
             health = health - 50;
             Destroy(other.gameObject);
         }
@@ -155,6 +175,8 @@ public class PlayerMovement : MonoBehaviour
             if(SceneManager.GetActiveScene().name != "Tutorial")
             {
                 endPopUp.SetActive(true);
+                audio.clip = starSound;
+                audio.Play();
                 if(GameObject.FindGameObjectWithTag("Bone") == null && health == 100 && GameObject.FindGameObjectWithTag("Slime") == null)
                 {
                     starPopUp.sprite = threeStar;
@@ -282,6 +304,8 @@ public class PlayerMovement : MonoBehaviour
 
         if(other.gameObject.tag == "Spike")
         {
+            audio.clip = spikeSound;
+            audio.Play();
             health = health - 20;
             if(movingUp)
             {
@@ -307,6 +331,8 @@ public class PlayerMovement : MonoBehaviour
 
         if(other.gameObject.tag == "Salt")
         {
+            audio.clip = saltSound;
+            audio.Play();
             health = health - 75;
             if(movingUp)
             {
@@ -347,6 +373,8 @@ public class PlayerMovement : MonoBehaviour
             GameObject childObject = child.gameObject;
             blockToMove = childObject.GetComponent<Animator>();
             blockToMove.SetTrigger("Show");
+            audio.clip = movingBlockSound;
+            audio.Play();
         }
     }
 
@@ -376,6 +404,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if(movingUp)
         {
+            if(!walkPlaying)
+            {
+                walkAudio.Play();
+            }
+            walkPlaying = true;
             transform.rotation = Quaternion.Euler(0,180,0);
             animator.SetBool("Walking", true);
             rb.linearVelocity = Vector3.back * playerSpeed;
@@ -383,6 +416,11 @@ public class PlayerMovement : MonoBehaviour
         }
         else if(movingDown)
         {
+            if(!walkPlaying)
+            {
+                walkAudio.Play();
+            }
+            walkPlaying = true;
             transform.rotation = Quaternion.Euler(0,0,0);
             animator.SetBool("Walking", true);
             rb.linearVelocity = Vector3.forward * playerSpeed;
@@ -390,6 +428,11 @@ public class PlayerMovement : MonoBehaviour
         }
         else if(movingLeft)
         {
+            if(!walkPlaying)
+            {
+                walkAudio.Play();
+            }
+            walkPlaying = true;
             transform.rotation = Quaternion.Euler(0,90,0);
             animator.SetBool("Walking", true);
             rb.linearVelocity = Vector3.right * playerSpeed;
@@ -397,10 +440,20 @@ public class PlayerMovement : MonoBehaviour
         }
         else if(movingRight)
         {
+            if(!walkPlaying)
+            {
+                walkAudio.Play();
+            }
+            walkPlaying = true;
             transform.rotation = Quaternion.Euler(0,-90,0);
             animator.SetBool("Walking", true);
             rb.linearVelocity = Vector3.left * playerSpeed;
             //transform.Translate(Vector3.left * playerSpeed * Time.deltaTime);
+        }
+        else
+        {
+            walkAudio.Stop();
+            walkPlaying = false;
         }
     }
 
