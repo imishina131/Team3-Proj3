@@ -6,7 +6,7 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private float playerSpeed = 2.0f;
+    private float playerSpeed = 3.0f;
     private Vector3 playerVelocity;
     private bool movingUp;
     private bool movingDown;
