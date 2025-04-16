@@ -42,7 +42,8 @@ public class PlayerMovement : MonoBehaviour
 
 
     public Slider timerSlider;
-    public float timerEnd = 0f;
+    public float time = 0f;
+    public float maxTime = 6f;
     private bool startTimer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -53,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         startTimer = false;
+        timerSlider.maxValue = maxTime;
     }
 
     // Update is called once per frame
@@ -84,14 +86,11 @@ public class PlayerMovement : MonoBehaviour
 
         if(startTimer)
         {
-            while(timerEnd < 6)
+            float timeActual = time += Time.deltaTime;
+            timerSlider.value = timeActual;
+            if(time >= 6)
             {
-                float time = timerEnd + Time.deltaTime;
-                timerSlider.value = time;
-                if(time >= 6)
-                {
-                    startTimer = false;
-                }
+                startTimer = false;
             }
 
         }
@@ -245,8 +244,6 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator LoadLevel(string name)
     {
-        timerSlider.maxValue = timerEnd;
-        timerSlider.value = 0;
         startTimer = true;
         yield return new WaitForSeconds(6);
         SceneManager.LoadScene(name);
