@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.UI;
+using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -31,6 +32,18 @@ public class PlayerMovement : MonoBehaviour
     public GameObject fence;
 
     public GameObject boneMessage;
+
+    public GameObject endPopUp;
+    public Image starPopUp;
+    public Sprite zeroStar;
+    public Sprite oneStar;
+    public Sprite twoStar;
+    public Sprite threeStar;
+
+
+    public Slider timerSlider;
+    public float timerEnd = 0f;
+    private bool startTimer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -38,6 +51,8 @@ public class PlayerMovement : MonoBehaviour
         healthBar.maxValue = health;
 
         rb = GetComponent<Rigidbody>();
+
+        startTimer = false;
     }
 
     // Update is called once per frame
@@ -66,6 +81,21 @@ public class PlayerMovement : MonoBehaviour
         {
             fence.SetActive(false);
         }
+
+        if(startTimer)
+        {
+            while(timerEnd < 6)
+            {
+                float time = timerEnd + Time.deltaTime;
+                timerSlider.value = time;
+                if(time >= 6)
+                {
+                    startTimer = false;
+                }
+            }
+
+        }
+
 
         Debug.Log("UP:" + movingUp + "DOWN:" + movingDown + "RIGHT:" + movingRight + "LEFT:" + movingLeft);
         Debug.Log("Bone:" + GameObject.FindGameObjectWithTag("Bone"));
@@ -104,30 +134,58 @@ public class PlayerMovement : MonoBehaviour
     {
         if(other.gameObject.tag == "Finish")
         {
+            movingDown = false;
+            movingLeft = false;
+            movingRight = false;
+            movingUp = false;
+            animator.SetBool("Walking", false);
+            endPopUp.SetActive(true);
+            if(GameObject.FindGameObjectWithTag("Bone") == null && health == 100 && GameObject.FindGameObjectWithTag("Slime") == null)
+            {
+                starPopUp.sprite = threeStar;
+            }
+            else if(GameObject.FindGameObjectWithTag("Bone") == null && GameObject.FindGameObjectWithTag("Slime") == null)
+            {
+                starPopUp.sprite = twoStar;
+            }
+            else if(GameObject.FindGameObjectWithTag("Bone") == null)
+            {
+                starPopUp.sprite = oneStar;
+            }
             if(SceneManager.GetActiveScene().name == "Tutorial" && GameObject.FindGameObjectWithTag("Bone") == null)
             {
                 SceneChange.tutorialComplete = true;
-                SceneManager.LoadScene("Level01");
+                StartCoroutine(LoadLevel("Level01"));
             }     
             else if(SceneManager.GetActiveScene().name == "Level01" && GameObject.FindGameObjectWithTag("Bone") == null)
             {
                 SceneChange.level01Complete = true;
-                SceneManager.LoadScene("Level02");
+                StartCoroutine(LoadLevel("Level02"));
             }
             else if(SceneManager.GetActiveScene().name == "Level02" && GameObject.FindGameObjectWithTag("Bone") == null)
             {
                 SceneChange.level02Complete = true;
-                SceneManager.LoadScene("Level03");
+                StartCoroutine(LoadLevel("Level03"));
             }
             else if(SceneManager.GetActiveScene().name == "Level03" && GameObject.FindGameObjectWithTag("Bone") == null)
             {
                 SceneChange.level03Complete = true;
-                SceneManager.LoadScene("Level04");
+                StartCoroutine(LoadLevel("Level04"));
             }
             else if(SceneManager.GetActiveScene().name == "Level04" && GameObject.FindGameObjectWithTag("Bone") == null)
             {
                 SceneChange.level04Complete = true;
-                SceneManager.LoadScene("Level05");
+                StartCoroutine(LoadLevel("Level05"));
+            }
+            else if(SceneManager.GetActiveScene().name == "Level05" && GameObject.FindGameObjectWithTag("Bone") == null)
+            {
+                SceneChange.level05Complete = true;
+                StartCoroutine(LoadLevel("Level06"));
+            }
+            else if(SceneManager.GetActiveScene().name == "Level06" && GameObject.FindGameObjectWithTag("Bone") == null)
+            {
+                SceneChange.level06Complete = true;
+                StartCoroutine(LoadLevel("LevelChoiceMenu"));
             }
         }
 
@@ -183,6 +241,15 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+    }
+
+    IEnumerator LoadLevel(string name)
+    {
+        timerSlider.maxValue = timerEnd;
+        timerSlider.value = 0;
+        startTimer = true;
+        yield return new WaitForSeconds(6);
+        SceneManager.LoadScene(name);
     }
 
     void OnTriggerExit(Collider other)
