@@ -62,6 +62,11 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject explosion;
 
+    public Transform teleport;
+
+    public GameObject camera;
+    private Animator camAnim;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -74,6 +79,7 @@ public class PlayerMovement : MonoBehaviour
         timerSlider.maxValue = maxTime;
 
         audio = GetComponent<AudioSource>();
+        camAnim = camera.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -172,14 +178,27 @@ public class PlayerMovement : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Finish")
+        if(other.gameObject.tag == "Teleport")
         {
-            
             movingDown = false;
             movingLeft = false;
             movingRight = false;
             movingUp = false;
-            canWalk = false;
+            animator.SetBool("Walking", false);
+            walkAudio.Stop();
+            walkPlaying = false;
+            transform.position = teleport.position;
+            camAnim.SetTrigger("Change");
+        }
+
+        if(other.gameObject.tag == "Finish")
+        {       
+            movingDown = false;
+            movingLeft = false;
+            movingRight = false;
+            movingUp = false;
+            walkAudio.Stop();
+            walkPlaying = false;
             animator.SetBool("Walking", false);
             if(SceneManager.GetActiveScene().name != "Tutorial")
             {
@@ -307,6 +326,7 @@ public class PlayerMovement : MonoBehaviour
                 }
                 StartCoroutine(LoadLevel("LevelChoiceMenu"));
             }
+
         }
 
 

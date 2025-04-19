@@ -16894,9 +16894,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1102299554}
   - component: {fileID: 1102299555}
+  - component: {fileID: 1102299556}
   m_Layer: 0
   m_Name: 'Build Node (X: 10, Z: 5),'
-  m_TagString: Untagged
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16930,6 +16931,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildArea: {fileID: 1173413485}
+--- !u!65 &1102299556
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102299553}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.3900337, y: 1.8523962, z: 1.4856824}
+  m_Center: {x: -0.035391808, y: 0.42619812, z: -0.56786925}
 --- !u!1 &1105301271
 GameObject:
   m_ObjectHideFlags: 0
@@ -26431,6 +26453,8 @@ MonoBehaviour:
   starSound: {fileID: 8300000, guid: bdc4ffe9ae4206a4387d3ade61a9a2cd, type: 3}
   walkAudio: {fileID: 527499216}
   explosion: {fileID: 1808023620}
+  teleport: {fileID: 0}
+  camera: {fileID: 0}
 --- !u!54 &1772180039
 Rigidbody:
   m_ObjectHideFlags: 0
