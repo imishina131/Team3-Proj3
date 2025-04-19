@@ -60,6 +60,8 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource walkAudio;
     private bool walkPlaying;
 
+    public GameObject explosion;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -148,12 +150,19 @@ public class PlayerMovement : MonoBehaviour
 
         if(other.gameObject.tag == "Bomb")
         {
+            explosion.SetActive(true);
+            Invoke("HideExplosion", 3.0f);
             audio.clip = bombSound;
             audio.Play();
             health = health - 50;
             Destroy(other.gameObject);
         }
 
+    }
+
+    void HideExplosion()
+    {
+        explosion.SetActive(false);
     }
 
     void HideMessage()

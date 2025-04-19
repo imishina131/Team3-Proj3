@@ -2400,6 +2400,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1831291974}
     m_Modifications:
+    - target: {fileID: 2134231884494747389, guid: 963cd2a01b1afbb4bb412d6078601ea9, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2687007546036421754, guid: 963cd2a01b1afbb4bb412d6078601ea9, type: 3}
       propertyPath: m_Name
       value: FenceWithPillar_RightDown
@@ -3327,6 +3331,10 @@ PrefabInstance:
     - target: {fileID: 5431391435237760507, guid: b5fe616ac69e65247938700f5e893e17, type: 3}
       propertyPath: m_Name
       value: StoneFenceFront
+      objectReference: {fileID: 0}
+    - target: {fileID: 6474597223371558640, guid: b5fe616ac69e65247938700f5e893e17, type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6521,6 +6529,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1744620818}
     m_Modifications:
+    - target: {fileID: 2292682239949759783, guid: f3a75d3c1d2d66444bd9b799c581c443, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3736684215474772416, guid: f3a75d3c1d2d66444bd9b799c581c443, type: 3}
       propertyPath: m_Name
       value: FenceWithPillar_BackRight
@@ -7715,6 +7727,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 180495088}
     m_Modifications:
+    - target: {fileID: 2007003147429583542, guid: c2190e284c32ee8418d979f7a2e44fde, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4692753127415357025, guid: c2190e284c32ee8418d979f7a2e44fde, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5885928155823457650, guid: c2190e284c32ee8418d979f7a2e44fde, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -7870,10 +7890,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoneFenceCornerFrontLeft
       objectReference: {fileID: 0}
+    - target: {fileID: 2699318662360235041, guid: 6349d92756af1cd418cc4145bbd630f2, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6078276225799625967, guid: 6349d92756af1cd418cc4145bbd630f2, type: 3}
       propertyPath: buildArea
       value: 
       objectReference: {fileID: 518715835}
+    - target: {fileID: 7496330489569717727, guid: 6349d92756af1cd418cc4145bbd630f2, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9279,6 +9307,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PillarPropTest08
       objectReference: {fileID: 0}
+    - target: {fileID: 1142171556848721956, guid: 2fdc9ceeab802f7448074fa2317ad7ff, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 3352293300933408032, guid: 2fdc9ceeab802f7448074fa2317ad7ff, type: 3}
       propertyPath: buildArea
       value: 
@@ -10263,6 +10295,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1977316047}
     m_Modifications:
+    - target: {fileID: 2134231884494747389, guid: 963cd2a01b1afbb4bb412d6078601ea9, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2687007546036421754, guid: 963cd2a01b1afbb4bb412d6078601ea9, type: 3}
       propertyPath: m_Name
       value: FenceWithPillar_RightDown
@@ -10420,6 +10456,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 450523330}
     m_Modifications:
+    - target: {fileID: 567379026174893401, guid: b78f1dfc248af1542a1ad9a05d7712bb, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1156161835943081632, guid: b78f1dfc248af1542a1ad9a05d7712bb, type: 3}
       propertyPath: m_Name
       value: StoneFenceCornerFrontRight
@@ -10468,6 +10508,10 @@ PrefabInstance:
       propertyPath: buildArea
       value: 
       objectReference: {fileID: 518715835}
+    - target: {fileID: 6990367501008700505, guid: b78f1dfc248af1542a1ad9a05d7712bb, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11898,6 +11942,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 49123394}
     m_Modifications:
+    - target: {fileID: 2292682239949759783, guid: f3a75d3c1d2d66444bd9b799c581c443, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3736684215474772416, guid: f3a75d3c1d2d66444bd9b799c581c443, type: 3}
       propertyPath: m_Name
       value: FenceWithPillar_BackRight
@@ -13130,6 +13178,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 249687624}
     m_Modifications:
+    - target: {fileID: 2134231884494747389, guid: 963cd2a01b1afbb4bb412d6078601ea9, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2687007546036421754, guid: 963cd2a01b1afbb4bb412d6078601ea9, type: 3}
       propertyPath: m_Name
       value: FenceWithPillar_RightDown
@@ -16716,6 +16768,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1617256902}
     m_Modifications:
+    - target: {fileID: 2292682239949759783, guid: f3a75d3c1d2d66444bd9b799c581c443, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3736684215474772416, guid: f3a75d3c1d2d66444bd9b799c581c443, type: 3}
       propertyPath: m_Name
       value: FenceWithPillar_BackRight
@@ -17073,6 +17129,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1010660455}
     m_Modifications:
+    - target: {fileID: 2292682239949759783, guid: f3a75d3c1d2d66444bd9b799c581c443, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3736684215474772416, guid: f3a75d3c1d2d66444bd9b799c581c443, type: 3}
       propertyPath: m_Name
       value: FenceWithPillar_BackRight
@@ -18054,6 +18114,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1811757523}
     m_Modifications:
+    - target: {fileID: 1787796113597405279, guid: beacab39403272e419cd70928ded3632, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3283749828087597494, guid: beacab39403272e419cd70928ded3632, type: 3}
       propertyPath: buildArea
       value: 
@@ -18737,6 +18801,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 562417844}
     m_Modifications:
+    - target: {fileID: 2509398489876653271, guid: 68963405387b40b4194ce3aca144b0e6, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5384446019239994515, guid: 68963405387b40b4194ce3aca144b0e6, type: 3}
       propertyPath: buildArea
       value: 
@@ -19943,6 +20011,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8576292049741348602, guid: 06221ebf5eaed7044b4f03cd776e5a5b, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20734,6 +20806,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1793388639}
     m_Modifications:
+    - target: {fileID: 2292682239949759783, guid: f3a75d3c1d2d66444bd9b799c581c443, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3736684215474772416, guid: f3a75d3c1d2d66444bd9b799c581c443, type: 3}
       propertyPath: m_Name
       value: FenceWithPillar_BackRight
@@ -20800,6 +20876,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 727971299}
     m_Modifications:
+    - target: {fileID: 2134231884494747389, guid: 963cd2a01b1afbb4bb412d6078601ea9, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2687007546036421754, guid: 963cd2a01b1afbb4bb412d6078601ea9, type: 3}
       propertyPath: m_Name
       value: FenceWithPillar_RightDown
@@ -22996,6 +23076,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1815413843}
     m_Modifications:
+    - target: {fileID: 2134231884494747389, guid: 963cd2a01b1afbb4bb412d6078601ea9, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2687007546036421754, guid: 963cd2a01b1afbb4bb412d6078601ea9, type: 3}
       propertyPath: m_Name
       value: FenceWithPillar_RightDown
@@ -24903,6 +24987,10 @@ PrefabInstance:
     - target: {fileID: 2927287096438183320, guid: f67a57c83100ae64a93896928857c256, type: 3}
       propertyPath: m_Name
       value: CornerPillarBackLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: 4293623131306634869, guid: f67a57c83100ae64a93896928857c256, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 7377407236031719569, guid: f67a57c83100ae64a93896928857c256, type: 3}
       propertyPath: buildArea
@@ -30913,6 +31001,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2147154023}
     m_Modifications:
+    - target: {fileID: 2292682239949759783, guid: f3a75d3c1d2d66444bd9b799c581c443, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3736684215474772416, guid: f3a75d3c1d2d66444bd9b799c581c443, type: 3}
       propertyPath: m_Name
       value: FenceWithPillar_BackRight
@@ -32603,6 +32695,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8576292049741348602, guid: 06221ebf5eaed7044b4f03cd776e5a5b, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -32870,10 +32966,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoneFenceCornerFrontLeft
       objectReference: {fileID: 0}
+    - target: {fileID: 2699318662360235041, guid: 6349d92756af1cd418cc4145bbd630f2, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6078276225799625967, guid: 6349d92756af1cd418cc4145bbd630f2, type: 3}
       propertyPath: buildArea
       value: 
       objectReference: {fileID: 518715835}
+    - target: {fileID: 7496330489569717727, guid: 6349d92756af1cd418cc4145bbd630f2, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -33973,6 +34077,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1912032838}
     m_Modifications:
+    - target: {fileID: 695460028113396246, guid: fe0b70d6b89c0e14f978c58b80759f79, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5851148582997020800, guid: fe0b70d6b89c0e14f978c58b80759f79, type: 3}
       propertyPath: buildArea
       value: 
@@ -35116,6 +35224,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1903107554}
     m_Modifications:
+    - target: {fileID: 2007003147429583542, guid: c2190e284c32ee8418d979f7a2e44fde, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4692753127415357025, guid: c2190e284c32ee8418d979f7a2e44fde, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5885928155823457650, guid: c2190e284c32ee8418d979f7a2e44fde, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -35749,6 +35865,10 @@ PrefabInstance:
     - target: {fileID: 4137875570422308732, guid: 06221ebf5eaed7044b4f03cd776e5a5b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8576292049741348602, guid: 06221ebf5eaed7044b4f03cd776e5a5b, type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -37176,6 +37296,14 @@ PrefabInstance:
       propertyPath: buildArea
       value: 
       objectReference: {fileID: 518715835}
+    - target: {fileID: 865688656585260545, guid: 6cc833e16c6a45944adf1a29125a2274, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047212030646449284, guid: 6cc833e16c6a45944adf1a29125a2274, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3647570336869603951, guid: 6cc833e16c6a45944adf1a29125a2274, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -37238,6 +37366,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 784646428}
     m_Modifications:
+    - target: {fileID: 1787796113597405279, guid: beacab39403272e419cd70928ded3632, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3283749828087597494, guid: beacab39403272e419cd70928ded3632, type: 3}
       propertyPath: buildArea
       value: 
@@ -37353,6 +37485,10 @@ PrefabInstance:
       propertyPath: buildArea
       value: 
       objectReference: {fileID: 518715835}
+    - target: {fileID: 6566767340262007156, guid: 7af5f9f6df9c9064e8adbaa5d58633e1, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8293396293041261984, guid: 7af5f9f6df9c9064e8adbaa5d58633e1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -37633,6 +37769,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2095216101}
     m_Modifications:
+    - target: {fileID: 1787796113597405279, guid: beacab39403272e419cd70928ded3632, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3283749828087597494, guid: beacab39403272e419cd70928ded3632, type: 3}
       propertyPath: buildArea
       value: 
@@ -38127,6 +38267,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 262104927}
     m_Modifications:
+    - target: {fileID: 2134231884494747389, guid: 963cd2a01b1afbb4bb412d6078601ea9, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2687007546036421754, guid: 963cd2a01b1afbb4bb412d6078601ea9, type: 3}
       propertyPath: m_Name
       value: FenceWithPillar_RightDown
@@ -38376,6 +38520,10 @@ PrefabInstance:
     - target: {fileID: 4137875570422308732, guid: 06221ebf5eaed7044b4f03cd776e5a5b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8576292049741348602, guid: 06221ebf5eaed7044b4f03cd776e5a5b, type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -40637,6 +40785,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1374885747}
     m_Modifications:
+    - target: {fileID: 2292682239949759783, guid: f3a75d3c1d2d66444bd9b799c581c443, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3736684215474772416, guid: f3a75d3c1d2d66444bd9b799c581c443, type: 3}
       propertyPath: m_Name
       value: FenceWithPillar_BackRight
@@ -42298,6 +42450,67 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildArea: {fileID: 518715835}
+--- !u!1001 &1572581588
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1938769068}
+    m_Modifications:
+    - target: {fileID: 4818342055451000353, guid: b791fbcad795a7c4b8f74dcd4ba44cc5, type: 3}
+      propertyPath: m_Name
+      value: Puff
+      objectReference: {fileID: 0}
+    - target: {fileID: 4818342055451000353, guid: b791fbcad795a7c4b8f74dcd4ba44cc5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6168898570448837671, guid: b791fbcad795a7c4b8f74dcd4ba44cc5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6168898570448837671, guid: b791fbcad795a7c4b8f74dcd4ba44cc5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.569
+      objectReference: {fileID: 0}
+    - target: {fileID: 6168898570448837671, guid: b791fbcad795a7c4b8f74dcd4ba44cc5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 6168898570448837671, guid: b791fbcad795a7c4b8f74dcd4ba44cc5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6168898570448837671, guid: b791fbcad795a7c4b8f74dcd4ba44cc5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6168898570448837671, guid: b791fbcad795a7c4b8f74dcd4ba44cc5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6168898570448837671, guid: b791fbcad795a7c4b8f74dcd4ba44cc5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6168898570448837671, guid: b791fbcad795a7c4b8f74dcd4ba44cc5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6168898570448837671, guid: b791fbcad795a7c4b8f74dcd4ba44cc5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6168898570448837671, guid: b791fbcad795a7c4b8f74dcd4ba44cc5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b791fbcad795a7c4b8f74dcd4ba44cc5, type: 3}
 --- !u!1 &1574454818
 GameObject:
   m_ObjectHideFlags: 0
@@ -50133,6 +50346,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 179667312}
     m_Modifications:
+    - target: {fileID: 2292682239949759783, guid: f3a75d3c1d2d66444bd9b799c581c443, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3736684215474772416, guid: f3a75d3c1d2d66444bd9b799c581c443, type: 3}
       propertyPath: m_Name
       value: FenceWithPillar_BackRight
@@ -50721,6 +50938,10 @@ PrefabInstance:
     - target: {fileID: 1777748664891483189, guid: 5270b377685a47f4a896178ef70e32b8, type: 3}
       propertyPath: m_Name
       value: StoneFenceRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 2403915266087439489, guid: 5270b377685a47f4a896178ef70e32b8, type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7157455848688146172, guid: 5270b377685a47f4a896178ef70e32b8, type: 3}
       propertyPath: buildArea
@@ -52517,6 +52738,7 @@ MonoBehaviour:
   spikeSound: {fileID: 8300000, guid: cf93bada680721d42825fb2d7cf008b2, type: 3}
   starSound: {fileID: 8300000, guid: bdc4ffe9ae4206a4387d3ade61a9a2cd, type: 3}
   walkAudio: {fileID: 823487454}
+  explosion: {fileID: 2102679522}
 --- !u!54 &1938769066
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -52582,6 +52804,7 @@ Transform:
   m_Children:
   - {fileID: 823487452}
   - {fileID: 367953621}
+  - {fileID: 2102679523}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!82 &1938769069
@@ -54522,6 +54745,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8576292049741348602, guid: 06221ebf5eaed7044b4f03cd776e5a5b, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -55998,6 +56225,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1670694157}
     m_Modifications:
+    - target: {fileID: 2509398489876653271, guid: 68963405387b40b4194ce3aca144b0e6, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5384446019239994515, guid: 68963405387b40b4194ce3aca144b0e6, type: 3}
       propertyPath: buildArea
       value: 
@@ -56704,6 +56935,10 @@ PrefabInstance:
     - target: {fileID: 4137875570422308732, guid: 06221ebf5eaed7044b4f03cd776e5a5b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8576292049741348602, guid: 06221ebf5eaed7044b4f03cd776e5a5b, type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -57765,6 +58000,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildArea: {fileID: 518715835}
+--- !u!1 &2102679522 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4818342055451000353, guid: b791fbcad795a7c4b8f74dcd4ba44cc5, type: 3}
+  m_PrefabInstance: {fileID: 1572581588}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2102679523 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6168898570448837671, guid: b791fbcad795a7c4b8f74dcd4ba44cc5, type: 3}
+  m_PrefabInstance: {fileID: 1572581588}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2105712519
 GameObject:
   m_ObjectHideFlags: 0
