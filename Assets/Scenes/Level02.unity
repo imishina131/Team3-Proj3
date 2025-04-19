@@ -13231,7 +13231,7 @@ PrefabInstance:
     - target: {fileID: 357598230742079930, guid: 70e78a7d65eddf24282d25fa4209533b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 132be35af2218bb4a8d69301c79c89c2, type: 2}
+      objectReference: {fileID: 2100000, guid: 4864ce5c972c50f4f8fe9f85d40d1612, type: 2}
     - target: {fileID: 1494453380929512149, guid: 70e78a7d65eddf24282d25fa4209533b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -26233,8 +26233,37 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4164938607214092617, guid: 3060a23f7d3574e45ae22e6789346a97, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1748259812}
   m_SourcePrefab: {fileID: 100100000, guid: 3060a23f7d3574e45ae22e6789346a97, type: 3}
+--- !u!1 &1748259811 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4164938607214092617, guid: 3060a23f7d3574e45ae22e6789346a97, type: 3}
+  m_PrefabInstance: {fileID: 1748259810}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1748259812
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748259811}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.7439098, y: 0.93371665, z: 1.7439098}
+  m_Center: {x: 0, y: 0.299446, z: 0}
 --- !u!1001 &1761075389
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31922,7 +31951,7 @@ PrefabInstance:
     - target: {fileID: 357598230742079930, guid: 70e78a7d65eddf24282d25fa4209533b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 8aff2bd5b50f87c4babfadd192ae10da, type: 2}
+      objectReference: {fileID: 2100000, guid: 2d696491a0cf1f54485860440965f586, type: 2}
     - target: {fileID: 1494453380929512149, guid: 70e78a7d65eddf24282d25fa4209533b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
