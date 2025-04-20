@@ -66,6 +66,9 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject camera;
     private Animator camAnim;
+    
+    private bool openGate;
+    public Animator gateAnim;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -109,7 +112,8 @@ public class PlayerMovement : MonoBehaviour
 
         if(GameObject.FindGameObjectWithTag("Bone") == null)
         {
-            fence.SetActive(false);
+            openGate = true;
+            gateAnim.SetTrigger("Open");
         }
 
         if(startTimer)
@@ -193,138 +197,141 @@ public class PlayerMovement : MonoBehaviour
 
         if(other.gameObject.tag == "Finish")
         {       
-            movingDown = false;
-            movingLeft = false;
-            movingRight = false;
-            movingUp = false;
-            walkAudio.Stop();
-            walkPlaying = false;
-            animator.SetBool("Walking", false);
-            if(SceneManager.GetActiveScene().name != "Tutorial")
+            if(openGate == true)
             {
-                endPopUp.SetActive(true);
-                audio.clip = starSound;
-                audio.Play();
-                if(GameObject.FindGameObjectWithTag("Bone") == null && health == 100 && GameObject.FindGameObjectWithTag("Slime") == null)
+                movingDown = false;
+                movingLeft = false;
+                movingRight = false;
+                movingUp = false;
+                walkAudio.Stop();
+                walkPlaying = false;
+                animator.SetBool("Walking", false);
+                if(SceneManager.GetActiveScene().name != "Tutorial")
                 {
-                    starPopUp.sprite = threeStar;
+                    endPopUp.SetActive(true);
+                    audio.clip = starSound;
+                    audio.Play();
+                    if(GameObject.FindGameObjectWithTag("Bone") == null && health == 100 && GameObject.FindGameObjectWithTag("Slime") == null)
+                    {
+                        starPopUp.sprite = threeStar;
+                    }
+                    else if(GameObject.FindGameObjectWithTag("Bone") == null && GameObject.FindGameObjectWithTag("Slime") == null)
+                    {
+                        starPopUp.sprite = twoStar;
+                    }
+                    else if(GameObject.FindGameObjectWithTag("Bone") == null)
+                    {
+                        starPopUp.sprite = oneStar;
+                    }
                 }
-                else if(GameObject.FindGameObjectWithTag("Bone") == null && GameObject.FindGameObjectWithTag("Slime") == null)
-                {
-                    starPopUp.sprite = twoStar;
-                }
-                else if(GameObject.FindGameObjectWithTag("Bone") == null)
-                {
-                    starPopUp.sprite = oneStar;
-                }
-            }
 
-            if(SceneManager.GetActiveScene().name == "Tutorial" && GameObject.FindGameObjectWithTag("Bone") == null)
-            {
-                SceneChange.tutorialComplete = true;
-                StartCoroutine(LoadLevel("LevelChoiceMenu"));
-            }     
-            else if(SceneManager.GetActiveScene().name == "Level01" && GameObject.FindGameObjectWithTag("Bone") == null)
-            {
-                SceneChange.level01Complete = true;
-                if(starPopUp.sprite == threeStar)
+                if(SceneManager.GetActiveScene().name == "Tutorial" && GameObject.FindGameObjectWithTag("Bone") == null)
                 {
-                    SceneChange.level01Stars = 3;
-                }
-                else if(starPopUp.sprite == twoStar)
+                    SceneChange.tutorialComplete = true;
+                    StartCoroutine(LoadLevel("LevelChoiceMenu"));
+                }     
+                else if(SceneManager.GetActiveScene().name == "Level01" && GameObject.FindGameObjectWithTag("Bone") == null)
                 {
-                    SceneChange.level01Stars = 2;
+                    SceneChange.level01Complete = true;
+                    if(starPopUp.sprite == threeStar)
+                    {
+                        SceneChange.level01Stars = 3;
+                    }
+                    else if(starPopUp.sprite == twoStar)
+                    {
+                        SceneChange.level01Stars = 2;
+                    }
+                    else if(starPopUp.sprite == oneStar)
+                    {
+                        SceneChange.level01Stars = 1;
+                    }
+                    StartCoroutine(LoadLevel("Level02"));
                 }
-                else if(starPopUp.sprite == oneStar)
+                else if(SceneManager.GetActiveScene().name == "Level02" && GameObject.FindGameObjectWithTag("Bone") == null)
                 {
-                    SceneChange.level01Stars = 1;
+                    SceneChange.level02Complete = true;
+                    if(starPopUp.sprite == threeStar)
+                    {
+                        SceneChange.level02Stars = 3;
+                    }
+                    else if(starPopUp.sprite == twoStar)
+                    {
+                        SceneChange.level02Stars = 2;
+                    }
+                    else if(starPopUp.sprite == oneStar)
+                    {
+                        SceneChange.level02Stars = 1;
+                    }
+                    StartCoroutine(LoadLevel("Level03"));
                 }
-                StartCoroutine(LoadLevel("Level02"));
-            }
-            else if(SceneManager.GetActiveScene().name == "Level02" && GameObject.FindGameObjectWithTag("Bone") == null)
-            {
-                SceneChange.level02Complete = true;
-                if(starPopUp.sprite == threeStar)
+                else if(SceneManager.GetActiveScene().name == "Level03" && GameObject.FindGameObjectWithTag("Bone") == null)
                 {
-                    SceneChange.level02Stars = 3;
+                    SceneChange.level03Complete = true;
+                    if(starPopUp.sprite == threeStar)
+                    {
+                        SceneChange.level03Stars = 3;
+                    }
+                    else if(starPopUp.sprite == twoStar)
+                    {
+                        SceneChange.level03Stars = 2;
+                    }
+                    else if(starPopUp.sprite == oneStar)
+                    {
+                        SceneChange.level03Stars = 1;
+                    }
+                    StartCoroutine(LoadLevel("Level04"));
                 }
-                else if(starPopUp.sprite == twoStar)
+                else if(SceneManager.GetActiveScene().name == "Level04" && GameObject.FindGameObjectWithTag("Bone") == null)
                 {
-                    SceneChange.level02Stars = 2;
+                    SceneChange.level04Complete = true;
+                    if(starPopUp.sprite == threeStar)
+                    {
+                        SceneChange.level04Stars = 3;
+                    }
+                    else if(starPopUp.sprite == twoStar)
+                    {
+                        SceneChange.level04Stars = 2;
+                    }
+                    else if(starPopUp.sprite == oneStar)
+                    {
+                        SceneChange.level04Stars = 1;
+                    }
+                    StartCoroutine(LoadLevel("Level05"));
                 }
-                else if(starPopUp.sprite == oneStar)
+                else if(SceneManager.GetActiveScene().name == "Level05" && GameObject.FindGameObjectWithTag("Bone") == null)
                 {
-                    SceneChange.level02Stars = 1;
+                    SceneChange.level05Complete = true;
+                    if(starPopUp.sprite == threeStar)
+                    {
+                        SceneChange.level05Stars = 3;
+                    }
+                    else if(starPopUp.sprite == twoStar)
+                    {
+                        SceneChange.level05Stars = 2;
+                    }
+                    else if(starPopUp.sprite == oneStar)
+                    {
+                        SceneChange.level05Stars = 1;
+                    }
+                    StartCoroutine(LoadLevel("Level06"));
                 }
-                StartCoroutine(LoadLevel("Level03"));
-            }
-            else if(SceneManager.GetActiveScene().name == "Level03" && GameObject.FindGameObjectWithTag("Bone") == null)
-            {
-                SceneChange.level03Complete = true;
-                if(starPopUp.sprite == threeStar)
+                else if(SceneManager.GetActiveScene().name == "Level06" && GameObject.FindGameObjectWithTag("Bone") == null)
                 {
-                    SceneChange.level03Stars = 3;
+                    SceneChange.level06Complete = true;
+                    if(starPopUp.sprite == threeStar)
+                    {
+                        SceneChange.level06Stars = 3;
+                    }
+                    else if(starPopUp.sprite == twoStar)
+                    {
+                        SceneChange.level06Stars = 2;
+                    }
+                    else if(starPopUp.sprite == oneStar)
+                    {
+                        SceneChange.level06Stars = 1;
+                    }
+                    StartCoroutine(LoadLevel("LevelChoiceMenu"));
                 }
-                else if(starPopUp.sprite == twoStar)
-                {
-                    SceneChange.level03Stars = 2;
-                }
-                else if(starPopUp.sprite == oneStar)
-                {
-                    SceneChange.level03Stars = 1;
-                }
-                StartCoroutine(LoadLevel("Level04"));
-            }
-            else if(SceneManager.GetActiveScene().name == "Level04" && GameObject.FindGameObjectWithTag("Bone") == null)
-            {
-                SceneChange.level04Complete = true;
-                if(starPopUp.sprite == threeStar)
-                {
-                    SceneChange.level04Stars = 3;
-                }
-                else if(starPopUp.sprite == twoStar)
-                {
-                    SceneChange.level04Stars = 2;
-                }
-                else if(starPopUp.sprite == oneStar)
-                {
-                    SceneChange.level04Stars = 1;
-                }
-                StartCoroutine(LoadLevel("Level05"));
-            }
-            else if(SceneManager.GetActiveScene().name == "Level05" && GameObject.FindGameObjectWithTag("Bone") == null)
-            {
-                SceneChange.level05Complete = true;
-                if(starPopUp.sprite == threeStar)
-                {
-                    SceneChange.level05Stars = 3;
-                }
-                else if(starPopUp.sprite == twoStar)
-                {
-                    SceneChange.level05Stars = 2;
-                }
-                else if(starPopUp.sprite == oneStar)
-                {
-                    SceneChange.level05Stars = 1;
-                }
-                StartCoroutine(LoadLevel("Level06"));
-            }
-            else if(SceneManager.GetActiveScene().name == "Level06" && GameObject.FindGameObjectWithTag("Bone") == null)
-            {
-                SceneChange.level06Complete = true;
-                if(starPopUp.sprite == threeStar)
-                {
-                    SceneChange.level06Stars = 3;
-                }
-                else if(starPopUp.sprite == twoStar)
-                {
-                    SceneChange.level06Stars = 2;
-                }
-                else if(starPopUp.sprite == oneStar)
-                {
-                    SceneChange.level06Stars = 1;
-                }
-                StartCoroutine(LoadLevel("LevelChoiceMenu"));
             }
 
         }
