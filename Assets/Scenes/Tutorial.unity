@@ -4643,6 +4643,7 @@ MonoBehaviour:
   timerSlider: {fileID: 0}
   time: 0
   maxTime: 6
+  timerSliderDeath: {fileID: 0}
   collectSound: {fileID: 8300000, guid: a59036687694d4345bdc7c0c7c81476c, type: 3}
   bombSound: {fileID: 8300000, guid: 8af901714aa0c414baca89016e0fd82f, type: 3}
   movingBlockSound: {fileID: 8300000, guid: d0aa100064034c045a9548c98edd24a3, type: 3}
@@ -4656,6 +4657,10 @@ MonoBehaviour:
   gateAnim: {fileID: 0}
   slimeCounter: {fileID: 0}
   requiredSlimeCounter: {fileID: 0}
+  spikeMessage: {fileID: 0}
+  bombMessage: {fileID: 0}
+  saltMessage: {fileID: 0}
+  deathPopUp: {fileID: 0}
 --- !u!54 &570529458
 Rigidbody:
   m_ObjectHideFlags: 0

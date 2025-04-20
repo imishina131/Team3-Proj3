@@ -44,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
     public Slider timerSlider;
     public float time = 0f;
     public float maxTime = 6f;
+    public Slider timerSliderDeath;
     private bool startTimer;
 
     private bool canWalk = true;
@@ -75,6 +76,15 @@ public class PlayerMovement : MonoBehaviour
     public TMP_Text requiredSlimeCounter;
     private GameObject[] slimes;
 
+    private static bool spikeHazardShown;
+    private static bool bombHazardShown;
+    private static bool saltHazardShown;
+    public GameObject spikeMessage;
+    public GameObject bombMessage;
+    public GameObject saltMessage;
+
+    public GameObject deathPopUp;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -86,6 +96,7 @@ public class PlayerMovement : MonoBehaviour
 
         startTimer = false;
         timerSlider.maxValue = maxTime;
+        timerSliderDeath.maxValue = maxTime;
 
         audio = GetComponent<AudioSource>();
         camAnim = camera.GetComponent<Animator>();
@@ -103,7 +114,8 @@ public class PlayerMovement : MonoBehaviour
 
         if(health <= 0)
         {
-            SceneManager.LoadScene("LevelChoiceMenu");
+            deathPopUp.SetActive(true);
+            StartCoroutine(LoadLevel(SceneManager.GetActiveScene().name));
         }
 
         if(SceneManager.GetActiveScene().name != "Tutorial")
@@ -144,6 +156,7 @@ public class PlayerMovement : MonoBehaviour
         {
             float timeActual = time += Time.deltaTime;
             timerSlider.value = timeActual;
+            timerSliderDeath.value = timeActual;
             if(time >= 6)
             {
                 startTimer = false;
@@ -188,6 +201,12 @@ public class PlayerMovement : MonoBehaviour
 
         if(other.gameObject.tag == "Bomb")
         {
+            if(!bombHazardShown)
+            {
+                bombMessage.SetActive(true);
+                bombHazardShown = true;
+                Invoke("HideBombMessage", 4.0f);
+            }
             explosion.SetActive(true);
             Invoke("HideExplosion", 3.0f);
             audio.clip = bombSound;
@@ -208,6 +227,20 @@ public class PlayerMovement : MonoBehaviour
         boneMessage.SetActive(false);
     }
 
+    void HideBombMessage()
+    {
+        bombMessage.SetActive(false);
+    }
+
+    void HideSpikeMessage()
+    {
+        spikeMessage.SetActive(false);
+    }
+
+    void HideSaltMessage()
+    {
+        saltMessage.SetActive(false);
+    }
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Teleport")
@@ -368,6 +401,12 @@ public class PlayerMovement : MonoBehaviour
 
         if(other.gameObject.tag == "Spike")
         {
+            if(!spikeHazardShown)
+            {
+                spikeMessage.SetActive(true);
+                spikeHazardShown = true;
+                Invoke("HideSpikeMessage", 4.0f);
+            }
             audio.clip = spikeSound;
             audio.Play();
             health = health - 20;
@@ -395,6 +434,12 @@ public class PlayerMovement : MonoBehaviour
 
         if(other.gameObject.tag == "Salt")
         {
+            if(!saltHazardShown)
+            {
+                saltMessage.SetActive(true);
+                saltHazardShown = true;
+                Invoke("HideSaltMessage", 4.0f);
+            }
             audio.clip = saltSound;
             audio.Play();
             health = health - 75;
