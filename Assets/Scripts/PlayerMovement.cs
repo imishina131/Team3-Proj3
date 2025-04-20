@@ -17,7 +17,6 @@ public class PlayerMovement : MonoBehaviour
 
     public TMP_Text boneCounter;
     private int numberOfBones;
-    private int numberOfSlimes;
 
     public Slider healthBar;
     private int health = 100;
@@ -70,10 +69,17 @@ public class PlayerMovement : MonoBehaviour
     private bool openGate;
     public Animator gateAnim;
 
+    private int requiredSlime;
+    private int numberOfSlimes;
+    public TMP_Text slimeCounter;
+    public TMP_Text requiredSlimeCounter;
+    private GameObject[] slimes;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         bones = GameObject.FindGameObjectsWithTag("Bone");
+        slimes = GameObject.FindGameObjectsWithTag("Slime");
         healthBar.maxValue = health;
 
         rb = GetComponent<Rigidbody>();
@@ -105,6 +111,12 @@ public class PlayerMovement : MonoBehaviour
             boneCounter.text = "Bones Collected: " + numberOfBones + "/" + bones.Length;
         }
 
+        if(SceneManager.GetActiveScene().name == "Level03" || SceneManager.GetActiveScene().name == "Level04" || SceneManager.GetActiveScene().name == "Level05" || SceneManager.GetActiveScene().name == "Level06")
+        {
+            requiredSlimeCounter.text = "Slime Required: " + requiredSlime + "/1";
+            slimeCounter.text = "Slimes Collected: " + numberOfSlimes + "/" + slimes.Length;
+        }
+
         if(movingUp || movingDown || movingLeft || movingRight)
         {
             CheckForHit();
@@ -112,8 +124,20 @@ public class PlayerMovement : MonoBehaviour
 
         if(GameObject.FindGameObjectWithTag("Bone") == null)
         {
-            openGate = true;
-            gateAnim.SetTrigger("Open");
+            if(SceneManager.GetActiveScene().name == "Level03" || SceneManager.GetActiveScene().name == "Level04" || SceneManager.GetActiveScene().name == "Level05" || SceneManager.GetActiveScene().name == "Level06")
+            {
+                if(requiredSlime >= 1)
+                {
+                    openGate = true;
+                    gateAnim.SetTrigger("Open");
+                }
+            }
+            else if(SceneManager.GetActiveScene().name != "Level03" || SceneManager.GetActiveScene().name != "Level04" || SceneManager.GetActiveScene().name != "Level05" || SceneManager.GetActiveScene().name != "Level06")
+            {
+                openGate = true;
+                gateAnim.SetTrigger("Open");
+            }
+
         }
 
         if(startTimer)
@@ -154,6 +178,10 @@ public class PlayerMovement : MonoBehaviour
         {
             audio.clip = collectSound;
             audio.Play();
+            if(requiredSlime == 0)
+            {
+                requiredSlime += 1;
+            }
             numberOfSlimes += 1;
             Destroy(other.gameObject);
         }
