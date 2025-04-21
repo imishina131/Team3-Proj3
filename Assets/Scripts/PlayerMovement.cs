@@ -90,6 +90,8 @@ public class PlayerMovement : MonoBehaviour
     private static bool afterLevel;
     public GameObject bone;
 
+    private bool level5BoneFirstDone;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -148,6 +150,8 @@ public class PlayerMovement : MonoBehaviour
         {
             if(SceneManager.GetActiveScene().name == "Level03" || SceneManager.GetActiveScene().name == "Level04" || SceneManager.GetActiveScene().name == "Level05" || SceneManager.GetActiveScene().name == "Level06")
             {
+                boneMessage.SetActive(true);
+                Invoke("HideMessage", 5.0f);
                 if(requiredSlime >= 1)
                 {
                     openGate = true;
@@ -194,6 +198,15 @@ public class PlayerMovement : MonoBehaviour
             {
                 boneMessage.SetActive(true);
                 Invoke("HideMessage", 5.0f);
+            }
+            if(SceneManager.GetActiveScene().name == "Level05")
+            {
+                if(!level5BoneFirstDone)
+                {
+                    boneMessage.SetActive(true);
+                    level5BoneFirstDone = true;
+                    Invoke("HideMessage", 5.0f);
+                }
             }
         }
 
