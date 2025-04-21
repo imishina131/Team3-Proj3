@@ -36,5 +36,17 @@ public class CheckForMusic : MonoBehaviour
                 music.volume = 0;
             }
         }
+
+        if(SceneManager.GetActiveScene().name == "Level06")
+        {
+            if(GameObject.FindGameObjectWithTag("Music05") == null)
+            {
+                music.volume = 0.12f;
+            }
+            else if(GameObject.FindGameObjectWithTag("Music05") != null)
+            {
+                music.volume = 0;
+            }
+        }
     }
 }

@@ -85,9 +85,19 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject deathPopUp;
 
+    public Animator boneAnim;
+
+    private static bool afterLevel;
+    public GameObject bone;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if(afterLevel)
+        {
+            bone.SetActive(false);
+            afterLevel = false;
+        }
         bones = GameObject.FindGameObjectsWithTag("Bone");
         slimes = GameObject.FindGameObjectsWithTag("Slime");
         healthBar.maxValue = health;
@@ -289,6 +299,7 @@ public class PlayerMovement : MonoBehaviour
                 if(SceneManager.GetActiveScene().name == "Tutorial" && GameObject.FindGameObjectWithTag("Bone") == null)
                 {
                     SceneChange.tutorialComplete = true;
+                    boneAnim.SetTrigger("Shrink");
                     StartCoroutine(LoadLevel("LevelChoiceMenu"));
                 }     
                 else if(SceneManager.GetActiveScene().name == "Level01" && GameObject.FindGameObjectWithTag("Bone") == null)
@@ -469,6 +480,10 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator LoadLevel(string name)
     {
+        if(SceneManager.GetActiveScene().name != "Tutorial")
+        {
+            afterLevel = true;
+        }
         startTimer = true;
         yield return new WaitForSeconds(6);
         SceneManager.LoadScene(name);

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Collections;
 
 public class SceneChange : MonoBehaviour
 {
@@ -36,6 +37,9 @@ public class SceneChange : MonoBehaviour
 
 
     public GameObject[] locks;
+
+    public Animator boneAnim;
+    public GameObject bone;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -178,28 +182,32 @@ public class SceneChange : MonoBehaviour
 
     public void GoToMainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        StartCoroutine(Load("MainMenu"));
     }
 
     public void GoToCreditsMenu()
     {
-        SceneManager.LoadScene("CreditsMenu");
+        StartCoroutine(Load("CreditsMenu"));
     }
 
     public void GoToHelpMenu()
     {
-        SceneManager.LoadScene("HelpMenu");
+        StartCoroutine(Load("HelpMenu"));
     }
 
     public void StartGame()
     {
         if(!tutorialComplete)
         {
-            SceneManager.LoadScene("Tutorial");
+            StartCoroutine(Load("Tutorial"));
         }
         else
         {
-            SceneManager.LoadScene("LevelChoiceMenu");
+            if(SceneManager.GetActiveScene().name != "CreditsMenu" && SceneManager.GetActiveScene().name != "HelpMenu" && SceneManager.GetActiveScene().name != "MainMenu" && SceneManager.GetActiveScene().name != "LevelChoiceMenu")
+            {
+                bone.SetActive(true);
+            }
+            StartCoroutine(Load("LevelChoiceMenu"));
         }
     }
 
@@ -207,7 +215,7 @@ public class SceneChange : MonoBehaviour
     {
         if(tutorialComplete)
         {
-            SceneManager.LoadScene("Level01");
+            StartCoroutine(Load("Level01"));
         }
     }
 
@@ -215,7 +223,7 @@ public class SceneChange : MonoBehaviour
     {
         if(level01Complete)
         {
-            SceneManager.LoadScene("Level02");
+            StartCoroutine(Load("Level02"));
         }
     }
 
@@ -223,7 +231,7 @@ public class SceneChange : MonoBehaviour
     {
         if(level02Complete)
         {
-            SceneManager.LoadScene("Level03");
+            StartCoroutine(Load("Level03"));
         }
     }
 
@@ -231,7 +239,7 @@ public class SceneChange : MonoBehaviour
     {
         if(level03Complete)
         {
-            SceneManager.LoadScene("Level04");
+            StartCoroutine(Load("Level04"));
         }
     }
 
@@ -239,7 +247,7 @@ public class SceneChange : MonoBehaviour
     {
         if(level04Complete)
         {
-            SceneManager.LoadScene("Level05");
+            StartCoroutine(Load("Level05"));
         }
     }
 
@@ -247,13 +255,13 @@ public class SceneChange : MonoBehaviour
     {
         if(level05Complete)
         {
-            SceneManager.LoadScene("Level06");
+            StartCoroutine(Load("Level06"));
         }
     }
 
     public void GoToTutorial()
     {
-        SceneManager.LoadScene("Tutorial");
+        StartCoroutine(Load("Tutorial"));
     }
 
     public void Quit()
@@ -264,5 +272,12 @@ public class SceneChange : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    IEnumerator Load(string name)
+    {
+        boneAnim.SetTrigger("Shrink");
+        yield return new WaitForSeconds(3.5f);
+        SceneManager.LoadScene(name);
     }
 }
