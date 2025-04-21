@@ -84,7 +84,7 @@ MonoBehaviour:
   master:
     m_OverrideState: 1
     m_Value:
-      <length>k__BackingField: 4
+      <length>k__BackingField: 3
       m_Loop: 0
       m_ZeroValue: 0
       m_Range: 1
@@ -101,17 +101,8 @@ MonoBehaviour:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.31764707
-          value: 0.20335376
-          inSlope: 1
-          outSlope: 1
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 0.64705884
-          value: 0.34591192
+          time: 0.5926829
+          value: 1
           inSlope: -0.07324683
           outSlope: -0.07324683
           tangentMode: 0
@@ -119,10 +110,10 @@ MonoBehaviour:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.9647059
-          value: 0.07337576
-          inSlope: 0
-          outSlope: 0
+          time: 1
+          value: 0.9692308
+          inSlope: 0.4205129
+          outSlope: 0.4205129
           tangentMode: 0
           weightedMode: 0
           inWeight: 0
@@ -290,13 +281,13 @@ MonoBehaviour:
   active: 1
   lift:
     m_OverrideState: 1
-    m_Value: {x: 0.80883926, y: 1, z: 0.95808834, w: 0}
+    m_Value: {x: 1, y: 0.9870307, z: 0.9733533, w: -0.017108642}
   gamma:
     m_OverrideState: 1
-    m_Value: {x: 0.53182083, y: 0.6393507, z: 1, w: 0}
+    m_Value: {x: 0.8340922, y: 0.4729218, z: 1, w: 0}
   gain:
-    m_OverrideState: 0
-    m_Value: {x: 1, y: 1, z: 1, w: 0}
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 0.8506932, z: 0.5238453, w: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,7 +324,7 @@ MonoBehaviour:
     m_Value: {x: 0, y: 0.13100791, z: 1, w: 0}
   midtones:
     m_OverrideState: 1
-    m_Value: {x: 0.955476, y: 0.8793341, z: 1, w: 0}
+    m_Value: {x: 0.955476, y: 0.8793341, z: 1, w: -0.17108639}
   highlights:
     m_OverrideState: 1
     m_Value: {x: 0.6719375, y: 1, z: 0.11766195, w: 0}
