@@ -6,7 +6,7 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private float playerSpeed = 2.0f;
+    private float playerSpeed = 2.5f;
     private Vector3 playerVelocity;
     private bool movingUp;
     private bool movingDown;
@@ -42,8 +42,8 @@ public class PlayerMovement : MonoBehaviour
 
 
     public Slider timerSlider;
-    public float time = 0f;
-    public float maxTime = 4f;
+    private float time = 0f;
+    private float maxTime = 4f;
     public Slider timerSliderDeath;
     private bool startTimer;
 
@@ -630,8 +630,8 @@ public class PlayerMovement : MonoBehaviour
     {
         RaycastHit objectHit;
         Vector3 fwd = raycastObject.transform.TransformDirection(Vector3.forward);
-        Debug.DrawRay(raycastObject.transform.position, fwd * 1, Color.green);
-        if(Physics.Raycast(raycastObject.transform.position, fwd, out objectHit, 1))
+        Debug.DrawRay(raycastObject.transform.position, fwd * 1.5f, Color.green);
+        if(Physics.Raycast(raycastObject.transform.position, fwd, out objectHit, 1.5f))
         {
             if(objectHit.transform.CompareTag("Wall"))
             {

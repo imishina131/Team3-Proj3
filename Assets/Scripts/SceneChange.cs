@@ -284,7 +284,7 @@ public class SceneChange : MonoBehaviour
     {
         boneAnim.SetTrigger("Shrink");
         fade.SetTrigger("Leave");
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene(name);
     }
 }
