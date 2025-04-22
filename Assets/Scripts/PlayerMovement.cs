@@ -94,6 +94,9 @@ public class PlayerMovement : MonoBehaviour
     private bool level6BoneLastOne;
 
     public Animator fade;
+
+    private bool firstBoneCollected;
+    public Animator gate01Anim;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -119,6 +122,14 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(SceneManager.GetActiveScene().name == "Level05" || SceneManager.GetActiveScene().name == "Level06")
+        {
+            if(numberOfBones >= 1)
+            {
+                firstBoneCollected = true;
+                gate01Anim.SetTrigger("Open");
+            }
+        }
         if(canWalk)
         {
             ChoosingDirection();
@@ -278,15 +289,18 @@ public class PlayerMovement : MonoBehaviour
     {
         if(other.gameObject.tag == "Teleport")
         {
-            movingDown = false;
-            movingLeft = false;
-            movingRight = false;
-            movingUp = false;
-            animator.SetBool("Walking", false);
-            walkAudio.Stop();
-            walkPlaying = false;
-            transform.position = teleport.position;
-            camAnim.SetTrigger("Change");
+            if(firstBoneCollected)
+            {
+                movingDown = false;
+                movingLeft = false;
+                movingRight = false;
+                movingUp = false;
+                animator.SetBool("Walking", false);
+                walkAudio.Stop();
+                walkPlaying = false;
+                transform.position = teleport.position;
+                camAnim.SetTrigger("Change");
+            }
         }
 
         if(other.gameObject.tag == "Finish")

@@ -30316,7 +30316,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &577387599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92493,6 +92493,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GatesWithLanterns
       objectReference: {fileID: 0}
+    - target: {fileID: 2250351894625774310, guid: 0101d721e6d9dbe4c8f3d88975bda6f3, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d110a992c4817404f85d56647c473f97, type: 2}
     - target: {fileID: 8460785297004782293, guid: 0101d721e6d9dbe4c8f3d88975bda6f3, type: 3}
       propertyPath: buildArea
       value: 
@@ -92545,6 +92549,11 @@ PrefabInstance:
 --- !u!4 &1683430214 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8889169078319078543, guid: 0101d721e6d9dbe4c8f3d88975bda6f3, type: 3}
+  m_PrefabInstance: {fileID: 1683430213}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1683430215 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2250351894625774310, guid: 0101d721e6d9dbe4c8f3d88975bda6f3, type: 3}
   m_PrefabInstance: {fileID: 1683430213}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1684222095
@@ -104188,6 +104197,7 @@ MonoBehaviour:
   boneAnim: {fileID: 1664266541}
   bone: {fileID: 1664266539}
   fade: {fileID: 1289018749}
+  gate01Anim: {fileID: 1683430215}
 --- !u!54 &1909758498
 Rigidbody:
   m_ObjectHideFlags: 0
