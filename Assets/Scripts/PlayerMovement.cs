@@ -112,8 +112,11 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         startTimer = false;
-        timerSlider.maxValue = maxTime;
-        timerSliderDeath.maxValue = maxTime;
+        if(SceneManager.GetActiveScene().name == "Level01" || SceneManager.GetActiveScene().name == "Level02" || SceneManager.GetActiveScene().name == "Level03" || SceneManager.GetActiveScene().name == "Level04" || SceneManager.GetActiveScene().name == "Level05" || SceneManager.GetActiveScene().name == "Level06")
+        {
+            timerSlider.maxValue = maxTime;
+            timerSliderDeath.maxValue = maxTime;
+        }
 
         audio = GetComponent<AudioSource>();
         camAnim = camera.GetComponent<Animator>();
@@ -189,12 +192,15 @@ public class PlayerMovement : MonoBehaviour
 
         if(startTimer)
         {
-            float timeActual = time += Time.deltaTime;
-            timerSlider.value = timeActual;
-            timerSliderDeath.value = timeActual;
-            if(time >= 4)
+            if(SceneManager.GetActiveScene().name != "Tutorial")
             {
-                startTimer = false;
+                float timeActual = time += Time.deltaTime;
+                timerSlider.value = timeActual;
+                timerSliderDeath.value = timeActual;
+                if(time >= 4)
+                {
+                    startTimer = false;
+                }
             }
 
         }

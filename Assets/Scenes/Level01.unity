@@ -325,7 +325,7 @@ MonoBehaviour:
   walkAudio: {fileID: 2065655869}
   explosion: {fileID: 1976361389}
   teleport: {fileID: 0}
-  camera: {fileID: 0}
+  camera: {fileID: 1203865713}
   gateAnim: {fileID: 1895529137}
   slimeCounter: {fileID: 0}
   requiredSlimeCounter: {fileID: 0}
@@ -336,6 +336,7 @@ MonoBehaviour:
   boneAnim: {fileID: 1659018770}
   bone: {fileID: 1659018769}
   fade: {fileID: 853167113}
+  gate01Anim: {fileID: 0}
 --- !u!54 &21992077
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5373,6 +5374,7 @@ MonoBehaviour:
   boneAnim: {fileID: 0}
   bone: {fileID: 0}
   fade: {fileID: 0}
+  gate01Anim: {fileID: 0}
 --- !u!136 &545593435
 CapsuleCollider:
   m_ObjectHideFlags: 0
