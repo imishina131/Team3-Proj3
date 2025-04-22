@@ -1600,8 +1600,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1215866067}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -9014,7 +9014,7 @@ RectTransform:
   m_Father: {fileID: 2143950146}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -22105,7 +22105,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1506586494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23193,6 +23193,10 @@ PrefabInstance:
     - target: {fileID: 1966086339719785393, guid: 4246369f1ca91f24db4f58b360d4ba4e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -4.683
+      objectReference: {fileID: 0}
+    - target: {fileID: 4574729734975136585, guid: 4246369f1ca91f24db4f58b360d4ba4e, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24985,10 +24989,10 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -26865,7 +26869,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.73
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 1.42
