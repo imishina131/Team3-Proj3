@@ -41,14 +41,19 @@ public class SceneChange : MonoBehaviour
     public Animator boneAnim;
     public GameObject bone;
 
+    public Animator fade;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Time.timeScale = 1f;
 
-        SetStars();
+        if(SceneManager.GetActiveScene().name == "LevelChoiceMenu")
+        {
+            SetStars();
 
-        Unlock();
+             Unlock();
+        }
     }
 
     void Unlock()
@@ -207,6 +212,7 @@ public class SceneChange : MonoBehaviour
             {
                 bone.SetActive(true);
             }
+            Time.timeScale = 1f;
             StartCoroutine(Load("LevelChoiceMenu"));
         }
     }
@@ -277,6 +283,7 @@ public class SceneChange : MonoBehaviour
     IEnumerator Load(string name)
     {
         boneAnim.SetTrigger("Shrink");
+        fade.SetTrigger("Leave");
         yield return new WaitForSeconds(3.5f);
         SceneManager.LoadScene(name);
     }

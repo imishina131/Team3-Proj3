@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Slider timerSlider;
     public float time = 0f;
-    public float maxTime = 6f;
+    public float maxTime = 4f;
     public Slider timerSliderDeath;
     private bool startTimer;
 
@@ -91,7 +91,9 @@ public class PlayerMovement : MonoBehaviour
     public GameObject bone;
 
     private bool level5BoneFirstDone;
+    private bool level6BoneLastOne;
 
+    public Animator fade;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -150,8 +152,6 @@ public class PlayerMovement : MonoBehaviour
         {
             if(SceneManager.GetActiveScene().name == "Level03" || SceneManager.GetActiveScene().name == "Level04" || SceneManager.GetActiveScene().name == "Level05" || SceneManager.GetActiveScene().name == "Level06")
             {
-                boneMessage.SetActive(true);
-                Invoke("HideMessage", 5.0f);
                 if(requiredSlime >= 1)
                 {
                     openGate = true;
@@ -164,6 +164,16 @@ public class PlayerMovement : MonoBehaviour
                 gateAnim.SetTrigger("Open");
             }
 
+            if(SceneManager.GetActiveScene().name == "Level06")
+            {
+                if(!level6BoneLastOne)
+                {
+                    boneMessage.SetActive(true);
+                    level6BoneLastOne = true;
+                    Invoke("HideMessage", 5.0f);
+                }
+            }
+
         }
 
         if(startTimer)
@@ -171,7 +181,7 @@ public class PlayerMovement : MonoBehaviour
             float timeActual = time += Time.deltaTime;
             timerSlider.value = timeActual;
             timerSliderDeath.value = timeActual;
-            if(time >= 6)
+            if(time >= 4)
             {
                 startTimer = false;
             }
@@ -498,7 +508,9 @@ public class PlayerMovement : MonoBehaviour
             afterLevel = true;
         }
         startTimer = true;
-        yield return new WaitForSeconds(6);
+        yield return new WaitForSeconds(1);
+        fade.SetTrigger("Leave");
+        yield return new WaitForSeconds(4);
         SceneManager.LoadScene(name);
     }
 
