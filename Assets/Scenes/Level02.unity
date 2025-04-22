@@ -22779,32 +22779,44 @@ PrefabInstance:
       value: Bats
       objectReference: {fileID: 0}
     - target: {fileID: 1966086339719785393, guid: 4246369f1ca91f24db4f58b360d4ba4e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.61109
+      objectReference: {fileID: 0}
+    - target: {fileID: 1966086339719785393, guid: 4246369f1ca91f24db4f58b360d4ba4e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.61109
+      objectReference: {fileID: 0}
+    - target: {fileID: 1966086339719785393, guid: 4246369f1ca91f24db4f58b360d4ba4e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.61109
+      objectReference: {fileID: 0}
+    - target: {fileID: 1966086339719785393, guid: 4246369f1ca91f24db4f58b360d4ba4e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -31
+      value: -37.02
       objectReference: {fileID: 0}
     - target: {fileID: 1966086339719785393, guid: 4246369f1ca91f24db4f58b360d4ba4e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -16.76
+      value: -8.97
       objectReference: {fileID: 0}
     - target: {fileID: 1966086339719785393, guid: 4246369f1ca91f24db4f58b360d4ba4e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -19.35
+      value: -17.5
       objectReference: {fileID: 0}
     - target: {fileID: 1966086339719785393, guid: 4246369f1ca91f24db4f58b360d4ba4e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7632212
+      value: 0.8597425
       objectReference: {fileID: 0}
     - target: {fileID: 1966086339719785393, guid: 4246369f1ca91f24db4f58b360d4ba4e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.03830655
+      value: -0.043151025
       objectReference: {fileID: 0}
     - target: {fileID: 1966086339719785393, guid: 4246369f1ca91f24db4f58b360d4ba4e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.64419
+      value: 0.5082619
       objectReference: {fileID: 0}
     - target: {fileID: 1966086339719785393, guid: 4246369f1ca91f24db4f58b360d4ba4e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0323323
+      value: -0.025509983
       objectReference: {fileID: 0}
     - target: {fileID: 1966086339719785393, guid: 4246369f1ca91f24db4f58b360d4ba4e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -41330,8 +41342,6 @@ MonoBehaviour:
   twoStar: {fileID: 21300000, guid: e1cd56a35b4357849ae3e6e06999a5ca, type: 3}
   threeStar: {fileID: 21300000, guid: 3814f2a9467d7ba40bc107f8964e23ac, type: 3}
   timerSlider: {fileID: 1519272701}
-  time: 0
-  maxTime: 6
   timerSliderDeath: {fileID: 1966759184}
   collectSound: {fileID: 8300000, guid: a59036687694d4345bdc7c0c7c81476c, type: 3}
   bombSound: {fileID: 8300000, guid: 8af901714aa0c414baca89016e0fd82f, type: 3}
