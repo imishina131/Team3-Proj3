@@ -148,13 +148,13 @@ public class PlayerMovement : MonoBehaviour
 
         if(SceneManager.GetActiveScene().name != "Tutorial")
         {
-            boneCounter.text = "Bones Collected: " + numberOfBones + "/" + bones.Length;
+            boneCounter.text = ": " + numberOfBones + "/" + bones.Length;
         }
 
         if(SceneManager.GetActiveScene().name == "Level03" || SceneManager.GetActiveScene().name == "Level04" || SceneManager.GetActiveScene().name == "Level05" || SceneManager.GetActiveScene().name == "Level06")
         {
-            requiredSlimeCounter.text = "Slime Required: " + requiredSlime + "/1";
-            slimeCounter.text = "Slimes Collected: " + numberOfSlimes + "/" + slimes.Length;
+            requiredSlimeCounter.text = "Required: " + requiredSlime + "/1";
+            slimeCounter.text = "Total: " + numberOfSlimes + "/" + slimes.Length;
         }
 
         if(movingUp || movingDown || movingLeft || movingRight)
