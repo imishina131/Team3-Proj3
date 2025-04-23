@@ -449,7 +449,7 @@ public class PlayerMovement : MonoBehaviour
                     {
                         SceneChange.level06Stars = 1;
                     }
-                    StartCoroutine(LoadLevel("LevelChoiceMenu"));
+                    StartCoroutine(LoadLevel("FinalCutScene"));
                 }
             }
 

@@ -204,7 +204,7 @@ public class SceneChange : MonoBehaviour
     {
         if(!tutorialComplete)
         {
-            StartCoroutine(Load("Tutorial"));
+            StartCoroutine(Load("IntroCutScene"));
         }
         else
         {
@@ -267,7 +267,15 @@ public class SceneChange : MonoBehaviour
 
     public void GoToTutorial()
     {
-        StartCoroutine(Load("Tutorial"));
+        if(SceneManager.GetActiveScene().name == "IntroCutScene")
+        {
+            fade.SetTrigger("Leave");
+            Invoke("Skip", 3.0f);
+        }
+        else
+        {
+            StartCoroutine(Load("Tutorial"));
+        }
     }
 
     public void Quit()
@@ -286,5 +294,10 @@ public class SceneChange : MonoBehaviour
         fade.SetTrigger("Leave");
         yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene(name);
+    }
+
+    void Skip()
+    {
+        SceneManager.LoadScene("Tutorial");
     }
 }
