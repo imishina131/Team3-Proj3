@@ -13,7 +13,7 @@ public class CinematicScript : MonoBehaviour
 
     IEnumerator PlayCinematic()
     {
-        yield return new WaitForSeconds(34);
+        yield return new WaitForSeconds(35);
         fade.SetTrigger("Leave");
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene("Tutorial");

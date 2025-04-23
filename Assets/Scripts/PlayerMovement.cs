@@ -333,6 +333,10 @@ public class PlayerMovement : MonoBehaviour
                     {
                         starPopUp.sprite = twoStar;
                     }
+                    else if(GameObject.FindGameObjectsWithTag("Bone") == null && GameObject.FindGameObjectsWithTag("Slime") != null && health == 100)
+                    {
+                        starPopUp.sprite = twoStar;
+                    }
                     else if(GameObject.FindGameObjectWithTag("Bone") == null && GameObject.FindGameObjectsWithTag("Slime") != null && health != 100)
                     {
                         starPopUp.sprite = oneStar;
