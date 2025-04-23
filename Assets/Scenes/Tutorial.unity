@@ -999,7 +999,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &91223740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1765,8 +1765,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 376234403}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3283,7 +3283,7 @@ Light:
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 0.78930813, g: 0.9334658, b: 1, a: 1}
-  m_Intensity: 2.66
+  m_Intensity: 1.25
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -3292,7 +3292,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.579
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 1.42
@@ -10880,13 +10880,13 @@ Light:
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 0.9433962, g: 0.82581776, b: 0.6852972, a: 1}
-  m_Intensity: 0.4
+  m_Intensity: 0.37
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -13762,7 +13762,7 @@ RectTransform:
   m_Father: {fileID: 587397665}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -19410,7 +19410,7 @@ Transform:
   m_GameObject: {fileID: 1613807385}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: 0.08124667, y: 5.6274333, z: 0.17015675}
+  m_LocalPosition: {x: 0.08124667, y: 1.98, z: 0.02}
   m_LocalScale: {x: 1.5329425, y: 1.5329431, z: 1.5329431}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19450,8 +19450,8 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 0.36320752, g: 1, b: 0.85157055, a: 1}
-  m_Intensity: 33.39
-  m_Range: 8.07
+  m_Intensity: 4.14
+  m_Range: 7
   m_SpotAngle: 45.909508
   m_InnerSpotAngle: 27.30839
   m_CookieSize: 10
