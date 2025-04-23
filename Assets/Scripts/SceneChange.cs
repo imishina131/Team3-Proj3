@@ -204,7 +204,7 @@ public class SceneChange : MonoBehaviour
     {
         if(!tutorialComplete)
         {
-            StartCoroutine(Load("Tutorial"));
+            StartCoroutine(Load("IntroCutScene"));
         }
         else
         {
