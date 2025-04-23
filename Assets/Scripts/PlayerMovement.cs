@@ -6,7 +6,7 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private float playerSpeed = 2.5f;
+    private float playerSpeed = 4f;
     private Vector3 playerVelocity;
     private bool movingUp;
     private bool movingDown;
@@ -630,8 +630,8 @@ public class PlayerMovement : MonoBehaviour
     {
         RaycastHit objectHit;
         Vector3 fwd = raycastObject.transform.TransformDirection(Vector3.forward);
-        Debug.DrawRay(raycastObject.transform.position, fwd * 1.5f, Color.green);
-        if(Physics.Raycast(raycastObject.transform.position, fwd, out objectHit, 1.5f))
+        Debug.DrawRay(raycastObject.transform.position, fwd * 1.3f, Color.green);
+        if(Physics.Raycast(raycastObject.transform.position, fwd, out objectHit, 1.3f))
         {
             if(objectHit.transform.CompareTag("Wall"))
             {
