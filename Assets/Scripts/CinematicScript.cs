@@ -28,7 +28,7 @@ public class CinematicScript : MonoBehaviour
 
     IEnumerator PlayCinematic02()
     {
-        yield return new WaitForSeconds(11);
+        yield return new WaitForSeconds(12);
         fade.SetTrigger("Leave");
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene("LevelChoiceMenu");
