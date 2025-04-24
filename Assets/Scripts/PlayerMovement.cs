@@ -97,6 +97,8 @@ public class PlayerMovement : MonoBehaviour
 
     private bool firstBoneCollected;
     public Animator gate01Anim;
+
+    public GameObject bubble;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -306,6 +308,8 @@ public class PlayerMovement : MonoBehaviour
                 walkPlaying = false;
                 transform.position = teleport.position;
                 camAnim.SetTrigger("Change");
+                bubble.SetActive(true);
+                ArrowScript.teleported = true;
             }
         }
 

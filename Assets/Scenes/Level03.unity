@@ -3799,7 +3799,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 133321779}
   m_LocalRotation: {x: 0.5399303, y: -0, z: -0, w: 0.8417098}
-  m_LocalPosition: {x: 0, y: 0, z: 1.14}
+  m_LocalPosition: {x: 0, y: 0, z: 1.76}
   m_LocalScale: {x: 0.001825967, y: 0.0018259671, z: 0.0018259673}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3809,7 +3809,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 65.358, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 1.99}
+  m_AnchoredPosition: {x: 0, y: 2.76}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &133321781
@@ -11561,6 +11561,7 @@ MonoBehaviour:
   bone: {fileID: 1677607618}
   fade: {fileID: 377141100}
   gate01Anim: {fileID: 0}
+  bubble: {fileID: 0}
 --- !u!54 &406955686
 Rigidbody:
   m_ObjectHideFlags: 0
