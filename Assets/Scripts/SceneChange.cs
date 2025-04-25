@@ -272,6 +272,11 @@ public class SceneChange : MonoBehaviour
             fade.SetTrigger("Leave");
             Invoke("Skip", 3.0f);
         }
+        else if(SceneManager.GetActiveScene().name == "FinalCutScene")
+        {
+            fade.SetTrigger("Leave");
+            Invoke("SkipFinal", 3.0f);
+        }
         else
         {
             StartCoroutine(Load("Tutorial"));
@@ -299,5 +304,10 @@ public class SceneChange : MonoBehaviour
     void Skip()
     {
         SceneManager.LoadScene("Tutorial");
+    }
+
+    void SkipFinal()
+    {
+        SceneManager.LoadScene("LevelChoiceMenu");
     }
 }
