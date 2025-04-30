@@ -48,6 +48,8 @@ public class SceneChange : MonoBehaviour
     public GameObject introButton;
     public GameObject outroButton;
 
+    public GameObject crown;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -65,6 +67,19 @@ public class SceneChange : MonoBehaviour
             if(level06Complete)
             {
                 outroButton.SetActive(true);
+            }
+        }
+
+        DisplayCrown();
+    }
+
+    void DisplayCrown()
+    {
+        if(crownPlayed)
+        {
+            if(SceneManager.GetActiveScene().name == "Level01" || SceneManager.GetActiveScene().name == "Level02" || SceneManager.GetActiveScene().name == "Level03" || SceneManager.GetActiveScene().name == "Level04" || SceneManager.GetActiveScene().name == "Level05" || SceneManager.GetActiveScene().name == "Level06" || SceneManager.GetActiveScene().name == "Tutorial")
+            {
+                crown.SetActive(true);
             }
         }
     }
