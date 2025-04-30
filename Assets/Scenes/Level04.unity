@@ -34242,7 +34242,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: ce3d510d3c951e347ae797154008bb4e, type: 3}
   m_Resource: {fileID: 8300000, guid: ce3d510d3c951e347ae797154008bb4e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -79502,6 +79502,7 @@ MonoBehaviour:
   saltSound: {fileID: 8300000, guid: 45d7d7d0825a6b24dab37a485ed25c70, type: 3}
   spikeSound: {fileID: 8300000, guid: cf93bada680721d42825fb2d7cf008b2, type: 3}
   starSound: {fileID: 8300000, guid: bdc4ffe9ae4206a4387d3ade61a9a2cd, type: 3}
+  slimeSound: {fileID: 8300000, guid: 977472013f9f63c47889d82d8e31336d, type: 3}
   walkAudio: {fileID: 823487454}
   explosion: {fileID: 2102679522}
   teleport: {fileID: 0}
@@ -79600,7 +79601,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0

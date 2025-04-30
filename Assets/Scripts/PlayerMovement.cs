@@ -56,6 +56,8 @@ public class PlayerMovement : MonoBehaviour
     public AudioClip saltSound;
     public AudioClip spikeSound;
     public AudioClip starSound;
+    public AudioClip slimeSound;
+    public AudioClip teleportSound;
 
     public AudioSource walkAudio;
     private bool walkPlaying;
@@ -144,8 +146,15 @@ public class PlayerMovement : MonoBehaviour
 
         if(health <= 0)
         {
-            deathPopUp.SetActive(true);
-            StartCoroutine(LoadLevel(SceneManager.GetActiveScene().name));
+            movingDown = false;
+            movingLeft = false;
+            movingRight = false;
+            movingUp = false;
+            walkAudio.Stop();
+            walkPlaying = false;
+            animator.SetBool("Walking", false);
+            animator.SetTrigger("Death");
+            Invoke("ShowDeath", 3.5f);
         }
 
         if(SceneManager.GetActiveScene().name != "Tutorial")
@@ -213,6 +222,12 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    void ShowDeath()
+    {
+        deathPopUp.SetActive(true);
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().name));
+    }
+
     void OnCollisionEnter(Collision other)
     {
         
@@ -241,7 +256,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(other.gameObject.tag == "Slime")
         {
-            audio.clip = collectSound;
+            audio.clip = slimeSound;
             audio.Play();
             if(requiredSlime == 0)
             {
@@ -306,6 +321,8 @@ public class PlayerMovement : MonoBehaviour
                 animator.SetBool("Walking", false);
                 walkAudio.Stop();
                 walkPlaying = false;
+                audio.clip = teleportSound;
+                audio.Play();
                 transform.position = teleport.position;
                 camAnim.SetTrigger("Change");
                 bubble.SetActive(true);
@@ -531,14 +548,18 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator LoadLevel(string name)
     {
-        if(SceneManager.GetActiveScene().name != "Tutorial")
-        {
-            afterLevel = true;
-        }
         startTimer = true;
         yield return new WaitForSeconds(1);
         fade.SetTrigger("Leave");
-        yield return new WaitForSeconds(4);
+        if(SceneManager.GetActiveScene().name != "Tutorial")
+        {
+            afterLevel = true;
+            yield return new WaitForSeconds(4);
+        }
+        else if(SceneManager.GetActiveScene().name == "Tutorial")
+        {
+            yield return new WaitForSeconds(1);
+        }
         SceneManager.LoadScene(name);
     }
 
