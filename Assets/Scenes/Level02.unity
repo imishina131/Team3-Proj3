@@ -42934,6 +42934,7 @@ MonoBehaviour:
   spikeSound: {fileID: 8300000, guid: cf93bada680721d42825fb2d7cf008b2, type: 3}
   starSound: {fileID: 8300000, guid: bdc4ffe9ae4206a4387d3ade61a9a2cd, type: 3}
   slimeSound: {fileID: 8300000, guid: 977472013f9f63c47889d82d8e31336d, type: 3}
+  teleportSound: {fileID: 0}
   walkAudio: {fileID: 527499216}
   explosion: {fileID: 1808023620}
   teleport: {fileID: 0}
@@ -53436,6 +53437,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b24b0a3acb982fd41ab250583d160484, type: 3}
+--- !u!1001 &7477909245998747176
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1046897642924109866, guid: 1b3bc369594b92549a2d49e3a7224b91, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.937
+      objectReference: {fileID: 0}
+    - target: {fileID: 1046897642924109866, guid: 1b3bc369594b92549a2d49e3a7224b91, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 1046897642924109866, guid: 1b3bc369594b92549a2d49e3a7224b91, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.962
+      objectReference: {fileID: 0}
+    - target: {fileID: 1046897642924109866, guid: 1b3bc369594b92549a2d49e3a7224b91, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1046897642924109866, guid: 1b3bc369594b92549a2d49e3a7224b91, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1046897642924109866, guid: 1b3bc369594b92549a2d49e3a7224b91, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1046897642924109866, guid: 1b3bc369594b92549a2d49e3a7224b91, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1046897642924109866, guid: 1b3bc369594b92549a2d49e3a7224b91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1046897642924109866, guid: 1b3bc369594b92549a2d49e3a7224b91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1046897642924109866, guid: 1b3bc369594b92549a2d49e3a7224b91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6889204327662360200, guid: 1b3bc369594b92549a2d49e3a7224b91, type: 3}
+      propertyPath: m_Name
+      value: Aura
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1b3bc369594b92549a2d49e3a7224b91, type: 3}
 --- !u!1001 &8275051533679227008
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53524,3 +53582,4 @@ SceneRoots:
   - {fileID: 1959064102}
   - {fileID: 7294961054620075467}
   - {fileID: 82327084}
+  - {fileID: 7477909245998747176}
