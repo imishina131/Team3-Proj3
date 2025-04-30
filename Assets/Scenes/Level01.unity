@@ -495,7 +495,6 @@ Transform:
   - {fileID: 2065655868}
   - {fileID: 1978830261}
   - {fileID: 1976361390}
-  - {fileID: 250149916}
   - {fileID: 1377022755}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -4010,6 +4009,7 @@ GameObject:
   - component: {fileID: 250149919}
   - component: {fileID: 250149918}
   - component: {fileID: 250149917}
+  - component: {fileID: 250149921}
   m_Layer: 5
   m_Name: HereBubble
   m_TagString: Untagged
@@ -4024,18 +4024,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 250149915}
-  m_LocalRotation: {x: 0.5399303, y: -0, z: -0, w: 0.8417098}
-  m_LocalPosition: {x: 0, y: 0, z: 1.33}
-  m_LocalScale: {x: 0.00143, y: 0.0014300001, z: 0.0014300002}
+  m_LocalRotation: {x: -0, y: 0.8417098, z: -0.5399303, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 7.9}
+  m_LocalScale: {x: 0.00143, y: 0.0014300002, z: 0.0014300004}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 825734172}
   - {fileID: 96253402}
-  m_Father: {fileID: 21992079}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 65.358, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.15, y: 2.1}
+  m_AnchoredPosition: {x: 3.035, y: 2}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &250149917
@@ -4113,6 +4113,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &250149921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250149915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3760f7a4a0b35684b956c312fd1e7e0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 21992075}
 --- !u!1 &251278341
 GameObject:
   m_ObjectHideFlags: 0
@@ -33527,3 +33540,4 @@ SceneRoots:
   - {fileID: 1402581817}
   - {fileID: 988147352}
   - {fileID: 1471893324}
+  - {fileID: 250149916}
