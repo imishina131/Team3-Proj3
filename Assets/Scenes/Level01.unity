@@ -424,6 +424,11 @@ MonoBehaviour:
   fade: {fileID: 853167113}
   gate01Anim: {fileID: 0}
   bubble: {fileID: 0}
+  scratch: {fileID: 0}
+  boneMessageAnim: {fileID: 285743398}
+  spikeMessageAnim: {fileID: 0}
+  bombMessageAnim: {fileID: 0}
+  saltMessageAnim: {fileID: 0}
 --- !u!54 &21992077
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4692,6 +4697,7 @@ GameObject:
   - component: {fileID: 285743395}
   - component: {fileID: 285743397}
   - component: {fileID: 285743396}
+  - component: {fileID: 285743398}
   m_Layer: 5
   m_Name: BoneMessage
   m_TagString: Untagged
@@ -4757,6 +4763,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 285743394}
   m_CullTransparentMesh: 1
+--- !u!95 &285743398
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285743394}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f4101198d6ebedb47b492e1d81ffc6f1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &289976553
 GameObject:
   m_ObjectHideFlags: 0
@@ -9016,6 +9044,11 @@ MonoBehaviour:
   fade: {fileID: 0}
   gate01Anim: {fileID: 0}
   bubble: {fileID: 0}
+  scratch: {fileID: 0}
+  boneMessageAnim: {fileID: 0}
+  spikeMessageAnim: {fileID: 0}
+  bombMessageAnim: {fileID: 0}
+  saltMessageAnim: {fileID: 0}
 --- !u!136 &545593435
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9152,6 +9185,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildArea: {fileID: 1637920508}
+--- !u!1 &551040310 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3085254466017926850, guid: 0101d721e6d9dbe4c8f3d88975bda6f3, type: 3}
+  m_PrefabInstance: {fileID: 1895529135}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &551040312
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 551040310}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.1007123, y: 2.5417886, z: 0.24114087}
+  m_Center: {x: -0.55035615, y: 0.7708945, z: -0.0005867034}
 --- !u!1001 &554133543
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25187,8 +25246,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.3121512, y: 2.1340518, z: 1.1022072}
-  m_Center: {x: -0.03369963, y: 0.567026, z: -0.5526304}
+  m_Size: {x: 2.3121512, y: 2.1340518, z: 0.79579854}
+  m_Center: {x: -0.03369963, y: 0.567026, z: -2.1087952}
 --- !u!1 &1636841530
 GameObject:
   m_ObjectHideFlags: 0
@@ -28900,6 +28959,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GatesWithLanterns
       objectReference: {fileID: 0}
+    - target: {fileID: 625645387303181175, guid: 0101d721e6d9dbe4c8f3d88975bda6f3, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 1010014313370856171, guid: 0101d721e6d9dbe4c8f3d88975bda6f3, type: 3}
       propertyPath: m_Convex
       value: 1
@@ -28988,6 +29051,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1274928974870992177, guid: 0101d721e6d9dbe4c8f3d88975bda6f3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1895529140}
+    - targetCorrespondingSourceObject: {fileID: 3085254466017926850, guid: 0101d721e6d9dbe4c8f3d88975bda6f3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 551040312}
   m_SourcePrefab: {fileID: 100100000, guid: 0101d721e6d9dbe4c8f3d88975bda6f3, type: 3}
 --- !u!4 &1895529136 stripped
 Transform:
@@ -30317,7 +30383,7 @@ Transform:
   m_GameObject: {fileID: 1978830260}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.9703529, z: 0.30812186}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0.30812186}
   m_LocalScale: {x: 1.5329429, y: 1.5329429, z: 1.5329429}
   m_ConstrainProportionsScale: 0
   m_Children: []

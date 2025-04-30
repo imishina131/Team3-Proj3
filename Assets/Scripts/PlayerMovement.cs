@@ -101,6 +101,13 @@ public class PlayerMovement : MonoBehaviour
     public Animator gate01Anim;
 
     public GameObject bubble;
+
+    public ParticleSystem scratch;
+
+    public Animator boneMessageAnim;
+    public Animator spikeMessageAnim;
+    public Animator bombMessageAnim;
+    public Animator saltMessageAnim;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -291,22 +298,36 @@ public class PlayerMovement : MonoBehaviour
 
     void HideMessage()
     {
-        boneMessage.SetActive(false);
+        boneMessageAnim.SetTrigger("Fade");
+        StartCoroutine(DeactivateMessage(boneMessage));
+        //boneMessage.SetActive(false);
     }
 
     void HideBombMessage()
     {
-        bombMessage.SetActive(false);
+        bombMessageAnim.SetTrigger("Fade");
+        StartCoroutine(DeactivateMessage(bombMessage));
+        //bombMessage.SetActive(false);
     }
 
     void HideSpikeMessage()
     {
-        spikeMessage.SetActive(false);
+        spikeMessageAnim.SetTrigger("Fade");
+        StartCoroutine(DeactivateMessage(spikeMessage));
+        //spikeMessage.SetActive(false);
     }
 
     void HideSaltMessage()
     {
-        saltMessage.SetActive(false);
+        saltMessageAnim.SetTrigger("Fade");
+        StartCoroutine(DeactivateMessage(saltMessage));
+        //saltMessage.SetActive(false);
+    }
+
+    IEnumerator DeactivateMessage(GameObject message)
+    {
+        yield return new WaitForSeconds(0.5f);
+        message.SetActive(false);
     }
     void OnTriggerEnter(Collider other)
     {
@@ -488,6 +509,7 @@ public class PlayerMovement : MonoBehaviour
             }
             audio.clip = spikeSound;
             audio.Play();
+            scratch.Play();
             health = health - 20;
             if(movingUp)
             {
