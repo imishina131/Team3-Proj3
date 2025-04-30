@@ -43,6 +43,11 @@ public class SceneChange : MonoBehaviour
 
     public Animator fade;
 
+    public static bool crownPlayed;
+
+    public GameObject introButton;
+    public GameObject outroButton;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -51,8 +56,16 @@ public class SceneChange : MonoBehaviour
         if(SceneManager.GetActiveScene().name == "LevelChoiceMenu")
         {
             SetStars();
+            Unlock();
+            if(tutorialComplete)
+            {
+                introButton.SetActive(true);
+            }
 
-             Unlock();
+            if(level06Complete)
+            {
+                outroButton.SetActive(true);
+            }
         }
     }
 
@@ -182,7 +195,33 @@ public class SceneChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(SceneManager.GetActiveScene().name == "LevelChoiceMenu")
+        {
+            if(level01Stars == 3 && level02Stars == 3 && level03Stars == 3 && level04Stars == 3 && level05Stars == 3 && level06Stars == 3)
+            {
+                if(!crownPlayed)
+                {
+                    boneAnim.SetTrigger("Shrink");
+                    Invoke("PlayEasterEgg", 1.5f);
+                    crownPlayed = true;
+                }
+            }
+        }
+    }
+
+    void PlayEasterEgg()
+    {
+        SceneManager.LoadScene("3Stars");
+    }
+
+    public void PlayIntro()
+    {
+        StartCoroutine(Load("IntroCutScene"));
+    }
+
+    public void PlayOutro()
+    {
+        StartCoroutine(Load("FinalCutScene"));
     }
 
     public void GoToMainMenu()
@@ -303,7 +342,14 @@ public class SceneChange : MonoBehaviour
 
     void Skip()
     {
-        SceneManager.LoadScene("Tutorial");
+        if(!tutorialComplete)
+        {
+            SceneManager.LoadScene("Tutorial");
+        }
+        else
+        {
+            SceneManager.LoadScene("LevelChoiceMenu");
+        }
     }
 
     void SkipFinal()

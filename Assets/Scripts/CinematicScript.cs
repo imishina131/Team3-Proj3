@@ -7,6 +7,7 @@ public class CinematicScript : MonoBehaviour
 {
     public Animator fade;
     public VideoPlayer videoplayer;
+    public Animator bone;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,6 +25,10 @@ public class CinematicScript : MonoBehaviour
         {
             videoplayer.url = System.IO.Path.Combine (Application.streamingAssetsPath, "main menu.mp4");
         }
+        else if(SceneManager.GetActiveScene().name == "3Stars")
+        {
+            StartCoroutine(PlayCrown());
+        }
     }
 
     IEnumerator PlayCinematic01()
@@ -31,7 +36,14 @@ public class CinematicScript : MonoBehaviour
         yield return new WaitForSeconds(35);
         fade.SetTrigger("Leave");
         yield return new WaitForSeconds(3);
-        SceneManager.LoadScene("Tutorial");
+        if(SceneChange.tutorialComplete == false)
+        {
+            SceneManager.LoadScene("Tutorial");
+        }
+        else
+        {
+            SceneManager.LoadScene("LevelChoiceMenu");
+        }
     }
 
     IEnumerator PlayCinematic02()
@@ -39,6 +51,15 @@ public class CinematicScript : MonoBehaviour
         yield return new WaitForSeconds(12);
         fade.SetTrigger("Leave");
         yield return new WaitForSeconds(3);
+        SceneManager.LoadScene("LevelChoiceMenu");
+    }
+
+    IEnumerator PlayCrown()
+    {
+        yield return new WaitForSeconds(8);
+        fade.SetTrigger("Leave");
+        bone.SetTrigger("Shrink");
+        yield return new WaitForSeconds(2);
         SceneManager.LoadScene("LevelChoiceMenu");
     }
     // Update is called once per frame
