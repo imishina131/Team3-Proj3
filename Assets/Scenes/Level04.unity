@@ -2273,7 +2273,7 @@ MonoBehaviour:
   glowRenderer: {fileID: 69030950}
   baseEmissionColor: {r: 0.19496846, g: 0.16247371, b: 0.16247371, a: 1}
   flickerSpeed: 0.7
-  intensity: 1
+  intensity: 0.5
 --- !u!135 &69030949
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2291,7 +2291,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -2356,12 +2356,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 69030947}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0.685, z: 3.04}
-  m_LocalScale: {x: 1.218, y: 1.218, z: 1.218}
+  m_LocalRotation: {x: -0.3838087, y: -0.13984491, z: 0.31247884, w: 0.8576079}
+  m_LocalPosition: {x: -3.7908134, y: 4.509768, z: -3.4703681}
+  m_LocalScale: {x: 63.463947, y: 63.46394, z: 63.46394}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 5675231945967329662}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &72853019
 PrefabInstance:
@@ -18870,7 +18870,7 @@ MonoBehaviour:
   glowRenderer: {fileID: 466586765}
   baseEmissionColor: {r: 0.19496846, g: 0.16247371, b: 0.16247371, a: 1}
   flickerSpeed: 0.7
-  intensity: 1
+  intensity: 0.5
 --- !u!135 &466586764
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -18888,7 +18888,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -18953,12 +18953,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 466586762}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.039, y: 0.685, z: 1.222}
-  m_LocalScale: {x: 1.218, y: 1.218, z: 1.218}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: 0.19847393, y: 2.6368725, z: -0.70742446}
+  m_LocalScale: {x: 4.3052425, y: 4.3052425, z: 4.3052425}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2052703307}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &466915969
 GameObject:
@@ -88111,7 +88111,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: c1791992b93ddc0489fcb12e41fbe470, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 466586767}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c1791992b93ddc0489fcb12e41fbe470, type: 3}
       insertIndex: -1
@@ -88143,6 +88146,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.8003798, y: 1.8159708, z: 2.5863464}
   m_Center: {x: -0.01154918, y: 0.9079854, z: 0.05296662}
+--- !u!4 &2052703307 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c1791992b93ddc0489fcb12e41fbe470, type: 3}
+  m_PrefabInstance: {fileID: 2052703304}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2052852828
 GameObject:
   m_ObjectHideFlags: 0
@@ -91048,7 +91056,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: c1791992b93ddc0489fcb12e41fbe470, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2127556544}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c1791992b93ddc0489fcb12e41fbe470, type: 3}
       insertIndex: -1
@@ -91080,6 +91091,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.8003798, y: 1.8159708, z: 2.5863464}
   m_Center: {x: -0.01154918, y: 0.9079854, z: 0.05296662}
+--- !u!4 &2105335573 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c1791992b93ddc0489fcb12e41fbe470, type: 3}
+  m_PrefabInstance: {fileID: 2105335570}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2105712519
 GameObject:
   m_ObjectHideFlags: 0
@@ -92253,7 +92269,7 @@ MonoBehaviour:
   glowRenderer: {fileID: 2127556542}
   baseEmissionColor: {r: 0.19496846, g: 0.16247371, b: 0.16247371, a: 1}
   flickerSpeed: 0.7
-  intensity: 1
+  intensity: 0.2
 --- !u!135 &2127556541
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -92271,7 +92287,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -92336,12 +92352,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2127556539}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.02, y: 0.685, z: 8.92}
-  m_LocalScale: {x: 1.218, y: 1.218, z: 1.218}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: -0.28277427, y: 2.6368725, z: 0}
+  m_LocalScale: {x: 4.3052425, y: 4.3052425, z: 4.3052425}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2105335573}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2131694647
 PrefabInstance:
@@ -93132,9 +93148,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 4841308660901249961, guid: c25dad9a9803c21428f5c00aeadd40a0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 69030952}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c25dad9a9803c21428f5c00aeadd40a0, type: 3}
+--- !u!4 &5675231945967329662 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4841308660901249961, guid: c25dad9a9803c21428f5c00aeadd40a0, type: 3}
+  m_PrefabInstance: {fileID: 5675231945967329661}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8582397603896165464
 Transform:
   m_ObjectHideFlags: 0
@@ -93199,6 +93223,3 @@ SceneRoots:
   - {fileID: 1526039529}
   - {fileID: 1219668695}
   - {fileID: 574471132}
-  - {fileID: 69030952}
-  - {fileID: 466586767}
-  - {fileID: 2127556544}

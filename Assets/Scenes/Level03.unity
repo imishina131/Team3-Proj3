@@ -4576,7 +4576,7 @@ MonoBehaviour:
   glowRenderer: {fileID: 140624241}
   baseEmissionColor: {r: 0.19496846, g: 0.16247371, b: 0.16247371, a: 1}
   flickerSpeed: 0.7
-  intensity: 1
+  intensity: 0.6
 --- !u!135 &140624240
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4594,7 +4594,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -4659,12 +4659,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 140624238}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.206, y: 0.685, z: 4.067}
-  m_LocalScale: {x: 1.218, y: 1.218, z: 1.218}
+  m_LocalRotation: {x: 0.33049893, y: -0, z: -0, w: 0.94380635}
+  m_LocalPosition: {x: 150.79764, y: -159.85086, z: 420.22894}
+  m_LocalScale: {x: 76.49793, y: 76.49793, z: 76.49793}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 3654844305148973312}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &141803130
 GameObject:
@@ -7936,7 +7936,7 @@ MonoBehaviour:
   glowRenderer: {fileID: 230858299}
   baseEmissionColor: {r: 0.19496846, g: 0.16247371, b: 0.16247371, a: 1}
   flickerSpeed: 0.7
-  intensity: 1
+  intensity: 0.6
 --- !u!135 &230858298
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7954,7 +7954,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -8019,12 +8019,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 230858296}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.039, y: 0.407, z: 2.13}
-  m_LocalScale: {x: 1.218, y: 1.218, z: 1.218}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: -0.3463046, y: 1.643627, z: -0.28685647}
+  m_LocalScale: {x: 4.3052425, y: 4.3052425, z: 4.3052425}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1509594141}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &236442867
 PrefabInstance:
@@ -42533,7 +42533,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: c1791992b93ddc0489fcb12e41fbe470, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 230858301}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c1791992b93ddc0489fcb12e41fbe470, type: 3}
       insertIndex: -1
@@ -42565,6 +42568,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.8003798, y: 1.8159708, z: 2.5863464}
   m_Center: {x: -0.01154918, y: 0.9079854, z: 0.05296662}
+--- !u!4 &1509594141 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c1791992b93ddc0489fcb12e41fbe470, type: 3}
+  m_PrefabInstance: {fileID: 1509594138}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1510864438
 GameObject:
   m_ObjectHideFlags: 0
@@ -61251,9 +61259,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7810401787071362517, guid: 88f327295a7548d41aa63ceeba4f581f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 140624243}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88f327295a7548d41aa63ceeba4f581f, type: 3}
+--- !u!4 &3654844305148973312 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7810401787071362517, guid: 88f327295a7548d41aa63ceeba4f581f, type: 3}
+  m_PrefabInstance: {fileID: 3654844305148973311}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4366581724431310791
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61416,5 +61432,3 @@ SceneRoots:
   - {fileID: 250300214}
   - {fileID: 592271253}
   - {fileID: 1775867569}
-  - {fileID: 140624243}
-  - {fileID: 230858301}
