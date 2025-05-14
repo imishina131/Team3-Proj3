@@ -324,12 +324,12 @@ public class SceneChange : MonoBehaviour
         if(SceneManager.GetActiveScene().name == "IntroCutScene")
         {
             fade.SetTrigger("Leave");
-            Invoke("Skip", 3.0f);
+            Invoke("Bone", 1.5f);
         }
         else if(SceneManager.GetActiveScene().name == "FinalCutScene")
         {
             fade.SetTrigger("Leave");
-            Invoke("SkipFinal", 3.0f);
+            Invoke("BoneFinal", 1.5f);
         }
         else
         {
@@ -353,6 +353,18 @@ public class SceneChange : MonoBehaviour
         fade.SetTrigger("Leave");
         yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene(name);
+    }
+
+    void Bone()
+    {
+        boneAnim.SetTrigger("Shrink");
+        Invoke("Skip", 1.5f);
+    }
+
+    void BoneFinal()
+    {
+        boneAnim.SetTrigger("Shrink");
+        Invoke("SkipFinal", 1.5f);
     }
 
     void Skip()

@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Slider healthBar;
     private int health = 100;
+    public TMP_Text healthNumber;
 
     public Animator blockToMove;
 
@@ -108,6 +109,9 @@ public class PlayerMovement : MonoBehaviour
     public Animator spikeMessageAnim;
     public Animator bombMessageAnim;
     public Animator saltMessageAnim;
+
+    public AudioSource gateAudio;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -142,6 +146,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 firstBoneCollected = true;
                 gate01Anim.SetTrigger("Open");
+                gateAudio.Play();
             }
         }
         if(canWalk)
@@ -150,6 +155,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         healthBar.value = health;
+        healthNumber.text = "" + health;
 
         if(health <= 0)
         {
@@ -188,12 +194,14 @@ public class PlayerMovement : MonoBehaviour
                 {
                     openGate = true;
                     gateAnim.SetTrigger("Open");
+                    gateAudio.Play();
                 }
             }
             else if(SceneManager.GetActiveScene().name != "Level03" || SceneManager.GetActiveScene().name != "Level04" || SceneManager.GetActiveScene().name != "Level05" || SceneManager.GetActiveScene().name != "Level06")
             {
                 openGate = true;
                 gateAnim.SetTrigger("Open");
+                gateAudio.Play();
             }
 
             if(SceneManager.GetActiveScene().name == "Level06")
@@ -491,6 +499,7 @@ public class PlayerMovement : MonoBehaviour
                     {
                         SceneChange.level06Stars = 1;
                     }
+                    boneAnim.SetTrigger("Shrink");
                     StartCoroutine(LoadLevel("FinalCutScene"));
                 }
             }
@@ -573,14 +582,14 @@ public class PlayerMovement : MonoBehaviour
         startTimer = true;
         yield return new WaitForSeconds(1);
         fade.SetTrigger("Leave");
-        if(SceneManager.GetActiveScene().name != "Tutorial")
+        if(SceneManager.GetActiveScene().name != "Tutorial" && SceneManager.GetActiveScene().name != "Level06")
         {
             afterLevel = true;
             yield return new WaitForSeconds(4);
         }
-        else if(SceneManager.GetActiveScene().name == "Tutorial")
+        else if(SceneManager.GetActiveScene().name == "Tutorial" || SceneManager.GetActiveScene().name != "Level06")
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(1.5f);
         }
         SceneManager.LoadScene(name);
     }

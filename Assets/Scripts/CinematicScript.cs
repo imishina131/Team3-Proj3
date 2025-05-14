@@ -35,7 +35,9 @@ public class CinematicScript : MonoBehaviour
     {
         yield return new WaitForSeconds(35);
         fade.SetTrigger("Leave");
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1.5f);
+        bone.SetTrigger("Shrink");
+        yield return new WaitForSeconds(1.5f);
         if(SceneChange.tutorialComplete == false)
         {
             SceneManager.LoadScene("Tutorial");
@@ -50,7 +52,9 @@ public class CinematicScript : MonoBehaviour
     {
         yield return new WaitForSeconds(12);
         fade.SetTrigger("Leave");
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1.5f);
+        bone.SetTrigger("Shrink");
+        yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene("LevelChoiceMenu");
     }
 
@@ -58,9 +62,10 @@ public class CinematicScript : MonoBehaviour
     {
         yield return new WaitForSeconds(8);
         fade.SetTrigger("Leave");
+        yield return new WaitForSeconds(1.5f);
         bone.SetTrigger("Shrink");
-        yield return new WaitForSeconds(2);
-        SceneManager.LoadScene("LevelChoiceMenu");
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene("Explore Village");
     }
     // Update is called once per frame
     void Update()
