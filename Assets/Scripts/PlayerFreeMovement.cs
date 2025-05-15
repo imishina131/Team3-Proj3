@@ -6,15 +6,15 @@ using UnityEngine;
 public class PlayerFreeMovement : MonoBehaviour
 {
     public Camera playerCamera;
-    public float walkSpeed = 6f;
-    public float runSpeed = 12f;
-    public float jumpPower = 7f;
-    public float gravity = 10f;
-    public float lookSpeed = 2f;
-    public float lookXLimit = 45f;
-    public float defaultHeight = 2f;
-    public float crouchHeight = 1f;
-    public float crouchSpeed = 3f;
+    public float walkSpeed;
+    public float runSpeed;
+    public float jumpPower;
+    public float gravity;
+    public float lookSpeed;
+    public float lookXLimit;
+    public float defaultHeight;
+    public float crouchHeight;
+    public float crouchSpeed;
 
     private Vector3 moveDirection = Vector3.zero;
     private float rotationX = 0;
@@ -67,8 +67,8 @@ public class PlayerFreeMovement : MonoBehaviour
         else
         {
             characterController.height = defaultHeight;
-            walkSpeed = 6f;
-            runSpeed = 12f;
+            walkSpeed = 2f;
+            runSpeed = 4f;
         }
 
         characterController.Move(moveDirection * Time.deltaTime);
